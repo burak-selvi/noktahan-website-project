@@ -1,0 +1,4753 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	padding: 0;
+	margin: 0;
+	background: url("../imgs/body-background.png");
+	overflow-x: hidden;
+}
+
+section{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+
+/* Loader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: 2s;
+  z-index: 100;
+}
+
+.preloader.complete {
+  transition-duration: 0.5s;
+  transition-delay: 1.5s;
+  opacity: 0;
+  z-index: -10;
+}
+
+.preloader .left,
+.preloader .right {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  will-change: transform;
+  height: 100vh;
+  background: #333;
+  display: block;
+  transition: 2s ease-in;
+}
+.preloader .left {
+	left: 0;;
+}
+.preloader .left .divider-wrap,
+.preloader .right {
+  right: 0;
+}
+.preloader .right .divider-wrap {
+  left: 0;
+}
+.preloader .left .divider-wrap,
+.preloader .right .divider-wrap {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  transform: scaleY(0.9);
+  will-change: transform;
+  transition: 2s ease both;
+}
+.preloader.complete .left {
+  left: -100%;
+}
+.preloader.complete .right {
+  right: -100%;
+}
+.preloader .left .divider-wrap .divider,
+.preloader .right .divider-wrap .divider {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #f83923;
+}
+.preloader.full .divider {
+  animation: full 3s ease 0.2s both;
+}
+@keyframes full {
+  0% {
+    transform: scaleY(0.003);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+
+/* HOME SECTION */
+#home{
+	box-shadow: 0 14px 13px #aaa;
+}
+
+#logo{
+	position: absolute;
+	left: 5%;
+	top: 3%;
+	width: 20%;
+}
+#logo:hover{
+	animation: kay2 .5s ease;
+}
+@keyframes kay2{
+	100%{transform: translateX(10px)};
+}
+
+.main-head{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	top: 32%;
+	display: flex;
+	flex-direction: column;
+}
+.main-head h1{
+	color: #282828;
+	font-family: 'Lobster', cursive;
+	letter-spacing: 4px;
+	font-size: 4rem;
+	text-shadow: 7px 5px 5px #7b7b7b;
+	text-align: center;
+	line-height: 1.5;
+}
+.main-head h1:nth-child(3){
+	text-align: center;
+	color: #92000a;
+}
+.main-head img:nth-child(1){
+	width: 35%;
+}
+.main-head img:nth-child(4){
+	align-self: flex-end;
+	width: 35%;
+}
+
+#tabak{
+	position: absolute;
+	z-index: 1;
+	height: 58%;
+	width: 35%;
+	top: 21%;
+	right: 11%;
+	border-radius: 50%; 
+	box-shadow: 0 0 2px 2px #fff;
+	padding: 5px;
+}
+#tabak img{
+	width: 100%;
+	height: 100%;
+}
+
+#slider{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40%;
+	height: 100%;
+}
+
+#menu{
+	width: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+	top: 2rem;
+	right: 4%;
+	z-index: 5;
+}
+#menu div{
+	margin-left: 1px;
+	margin-top: 1px;
+	width: 12px;
+	height: 12px;
+	border: 1px solid white;
+	border-radius: 50%;
+}
+#menu div:hover{
+	border-radius: 35%;
+}
+#menu.open{
+	position: fixed;
+}
+#menu:hover{
+	cursor: pointer;
+}
+.menu-links{
+	display: flex;
+	list-style: none;
+	position: fixed;
+  background-color: #92000ad5;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  clip-path: circle(100px at 99% -70%);
+	transition: all 1s ease-out;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 4;
+}
+.menu-links.open{
+	clip-path: circle(3000px at 90% -15%);
+}
+.menu-links li{
+	opacity: 0;
+}
+li.fade{
+	opacity: 1;
+} 
+.menu-links li a{
+	font-size: 2rem;
+	text-decoration: none;
+	color: #fff;
+}
+.menu-links li a::after{
+	content: '';
+	display: block;
+	width: 0;
+	height: 2px;
+	background: #fff;
+	transition: width .3s;
+}
+.menu-links li a:hover::after{
+	width: 100%;
+	transition: width .3s;
+}
+.menu-links li:nth-child(1){
+	transition: all 0.5s ease 0.2s;
+}
+.menu-links li:nth-child(2){
+	transition: all 0.5s ease 0.4s;
+}
+.menu-links li:nth-child(3){
+	transition: all 0.5s ease 0.6s;
+}
+.menu-links li:nth-child(4){
+	transition: all 0.5s ease 0.8s;
+}
+.menu-links li:nth-child(5){
+	transition: all 0.5s ease 1s;
+}
+
+
+.main-icons{
+	background: #fff;
+	border-radius: 10px 0 0 10px;
+	position: absolute;
+	top: 37%;
+	right: 0;
+	width: 65px;
+	height: 26%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+}
+.main-icons i{
+	font-size: 2.3rem;
+	margin: 0.7rem 0;
+	color: #222;
+}
+.main-icons i:hover{
+	color: red;
+}
+
+.main-image-slider p{
+	padding-right: 2px;
+	padding-top: 5px;
+	font-size: 0.6rem;
+	font-weight: 100;
+}
+.main-image-slider h6{
+	font-size: 0.9rem;
+}
+.main-image-slider{
+	height: 10%;
+	position: absolute;
+	left: 2%;
+	bottom: 1%;
+	display: grid;
+	grid-template-columns: 2% 92% 2%;
+	grid-column-gap: 1rem;
+	align-items: center;
+}
+.sldr-container-home{
+	width: 1000%;
+	position: relative;
+	display: flex;
+	height: 100%;
+}
+.bg-container-home{
+	width: 700px;
+	height: 100%;
+	overflow: hidden;
+}
+.item-home{
+	display: flex;
+	width: 350px;
+	height: 100%;
+	align-items: center;
+	margin-left: 3px;
+}
+.black-box{
+	position: relative;
+	width: 25%;
+	height: 100%;
+	background-color: #000;
+}
+.black-box img{
+	position: absolute;
+	width: 110%;
+	height: 70%;
+	right: -5%;
+	top: 15%;
+}
+.content-home{
+	margin-left: 1rem;
+	width: 60%;
+}
+.btn-home{
+	display: flex;
+	flex-direction: column;
+	height: 70%;
+	justify-content: center;
+}
+#home button {
+	height: 100%;
+  border: none;
+	color: #fff;
+	background-color: #92000a;
+  cursor: pointer;
+	outline: none;
+	z-index: 3;
+}
+#home button i{
+	font-size: 1.3rem;
+}
+#home button:hover{
+	background-color: #be020e;
+}
+.fromleft{
+	animation: froml 1.5s ease;
+}
+@keyframes froml{
+	0%{transform: translateX(-1000px)};
+}
+.fromright{
+	animation: fromr 1.5s ease;
+}
+@keyframes fromr{
+	0%{transform: translateX(1000px)};
+}
+
+
+/* SECTION HEADERS */
+.headers{
+	position: absolute;
+	margin: 1.5rem 0 0 2rem;
+	font-weight: 400;
+	font-family: 'Patua One', cursive;
+	color: #92000a;
+	text-shadow: 7px 5px 5px #000;
+	letter-spacing: 5px;
+	font-size: 4rem;
+}
+.span-white{
+	background-color: #fff;
+}
+.span-black{
+	color: white;
+	background-color: #000;
+	padding-top: -1rem;
+}
+
+
+
+/* ABOUT SECTION */
+.wrapper-about{
+	display: grid;
+	grid-template-columns: 45% auto;
+	grid-column-gap: 2rem;
+	padding: 2rem;
+	margin: 7rem 0 0 0;
+}
+.wrapper-about-1{
+	display: flex;
+	flex-wrap: wrap;
+}
+.wrapper-about-1 h1{
+	color: #92000a;
+	font-weight: 700;
+	font-family: 'Patua One', cursive;
+	text-shadow: 7px 5px 5px #000;
+	letter-spacing: 10px;
+	font-size: 4rem;
+}
+.wrapper-about-1 p{
+	font-size: 1.3rem;
+	letter-spacing: 3px;
+	font-family: 'Lobster', cursive;
+	margin-top: 5rem;
+}
+.wrapper-about-2{
+	width: 100%;
+	height: 100%;
+}
+.wrapper-about-2 img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/* TASTES SECTION */
+
+.wrapper-taste{
+	display: grid;
+	grid-template-columns: 40% auto;
+	grid-column-gap: 1rem;
+	margin: 7rem 2rem 0rem 2rem;
+	width: 90%;
+	height: 80%;
+	position: absolute;
+}
+.wrapper-taste-1 ul{
+	margin-top: 2rem;
+	list-style: none;
+}
+.wrapper-taste-1 ul li{
+	color: #ddd;
+	font-family: 'Lobster', cursive;
+	font-size: 2.3rem;
+	text-decoration: none;	
+	line-height: 2;
+}
+.wrapper-taste-1 ul li:hover{
+	color: #92000a;
+	margin-left: 2.5rem;
+	cursor: pointer;
+}
+.wrapper-taste-1 ul li.selected-taste{
+	color: #92000a;
+	margin-left: 2.5rem;
+}
+
+.wrapper-taste-2{
+	width: 100%;
+	height: 100%;
+}
+.wrapper-taste-2-1{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.taste2-item{
+	width: 100%;
+	height: 80%;
+	position: absolute;
+	opacity: 0;
+}
+.taste2-item.selected-taste-img{
+	opacity: 1;
+}
+.wrapper-taste-2 img{
+	width: 100%;
+	height: 100%;
+}
+
+#taste-bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	filter: brightness(15%);
+}
+
+
+
+
+
+/* MEMORIES SECTION */
+
+.slider-memories{
+	height: 60%;
+	width: 92%;
+	position: absolute;
+	left: 4%;
+	bottom: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bg-container-memories{
+	height: 100%;
+	overflow: hidden;
+}
+.sldr-container-memories{
+	width: 1000%;
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+.item-memories{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 50%;
+}
+.item-memories.selected{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 75%;
+}
+#memories img{
+	width: 100%;
+}
+.item-memories h3{
+	text-align: center;
+	font-family: 'Lobster', cursive;
+	color: #92000a;
+	opacity: 0;
+	margin-bottom: 1rem;
+}
+.item-memories.selected h3{
+	opacity: 1;
+}
+.btn-mem-l, .btn-mem-r{
+	width: 1%;
+	height: 12%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#memories button {
+  border: none;
+  background-color: #92000a;
+  color: #fff;
+  cursor: pointer;
+	outline: none;
+	z-index: 3;
+	height: 100%;
+}
+#memories .btn-mem-l{
+	margin-right: 2rem;
+}
+#memories .btn-mem-r{
+	margin-left: 2rem;
+}
+#memories button i{
+	font-size: 1.3rem;
+}#memories button:hover{
+	background-color: #be020e;
+}
+
+
+
+
+/* COMMENTS SECTION */
+#comments img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	filter: brightness(20%);
+}
+
+.slider-comments{
+	height: 60%;
+	width: 55%;
+	position: absolute;
+	left: 22%;
+	bottom: 15%;
+	display: flex;
+}
+.bg-container-comments{
+	width: 600px;
+	height: 100%;
+	overflow: hidden;
+}
+.sldr-container-comments{
+	width: 1000%;
+	position: relative;
+	display: flex;
+	height: 100%;
+}
+.item-comments{
+	display: flex;
+	width: 600px;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.contents-comments{
+	width: 80%;
+}
+
+#comments p{
+	font-size: 1.2rem;
+	font-family: 'Lobster', cursive;
+	color: #fff;
+	font-weight: 100;
+}
+#comments h3{
+	font-size: 2rem;
+	margin-top: 1.5rem;
+	color: #92000a;
+	text-align: end;
+	font-family: 'Lobster', cursive;
+}
+#comments h3 span{
+	color: #fff;
+}
+.btn-com{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 2%;
+}
+
+#comments p.quote-l{
+	font-size: 7rem;
+	color: #92000a;
+	font-family: 'Lobster', cursive;
+}
+#comments p.quote-r{
+	font-size: 7rem;
+	color: #92000a;
+	margin-bottom: -1rem;
+	font-family: 'Lobster', cursive;
+}
+.quote-div-r{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+#comments button {
+  border: none;
+  background-color: #92000a;
+  color: #fff;
+  cursor: pointer;
+	outline: none;
+	z-index: 3;
+	height: 15%;
+}
+#comments button i{
+	font-size: 1.3rem;
+}
+#comments button:hover{
+	background-color: #be020e;
+}
+
+
+
+/* CONTACT SECTION */
+.wrapper-contact{
+	position: absolute;
+	display: grid;
+	grid-template-columns: 50% auto;
+	grid-column-gap: 4rem;
+	padding: 2rem 0;
+	width: 90%;
+	height: 70%;
+	top: 15%;
+	left: 5%;
+}
+.wrapper-contact-1 ul{
+	list-style: none;
+	margin-top: 3rem;
+}
+.wrapper-contact-1 ul li a{
+	font-family: 'Lobster', cursive; 
+	color: #111;
+	font-size: 1.3rem;
+	letter-spacing: 2px;
+	text-decoration: none;
+	line-height: 2.5;
+}
+
+.wrapper-contact-1 ul li a:hover{
+	color: #92000a;
+}
+
+.wrapper-contact-1 ul li a i{
+	font-size: 2.2rem;
+	margin-right: 1.2rem;
+}
+.wrapper-contact-1 #address a{
+	line-height: 1.1;
+}
+.wrapper-contact-1 #address i{
+	float: left;
+}
+
+footer{
+	position: absolute;
+	bottom: 2%;
+	left: 2%;
+}
+
+footer p{
+	font-family: 'Lobster', cursive;
+	letter-spacing: 2px;
+	font-size: 1.1rem;
+}
+
+
+#contact img{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 5%;
+	bottom: 1rem;
+}
+#contact img:hover{
+	animation: kay 1s ease;
+}
+@keyframes kay{
+	100%{transform: translateX(-50px)};
+}
+
+
+
+
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+################				Min-width: 2001 px						########################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+
+
+
+@media (min-width: 2001px){
+
+	.menu-links li a{
+		font-size: 5rem;
+	}
+
+	.main-head{
+		width: 40%;
+		left: 7%;
+	}
+	
+	.main-head h1{
+		letter-spacing: 0.9rem;
+		font-size: 8rem;
+		text-shadow: 7px 5px 5px #7b7b7b;
+		font-weight: 200;
+	}
+	
+
+	#tabak{
+		height: 56%;
+		width: 35%;
+		top: 22%;
+		right: 10%;
+	}
+	
+
+
+	#menu{
+		width: 90px;
+		top: 4rem;
+		right: 4%;
+	}
+	
+	#menu div{
+		width: 25px;
+		height: 25px;
+		border: 4px solid white;
+	}
+
+
+	.main-icons{
+		background: #fff;
+		border-radius: 20px 0 0 20px;
+		top: 36%;
+		width: 120px;
+		height: 28%;
+	}
+	
+	.main-icons i{
+		font-size: 4.2rem;
+		margin: 1rem 0;
+	}
+	
+	.main-image-slider p{
+		font-size: 1rem;
+		padding-right: 2px;
+	}
+	
+	.main-image-slider h6{
+		font-size: 1.4rem;
+	}
+	.bg-container-home{
+		width: 1000px;
+	}
+	.item-home{
+		width: 500px;
+	}
+	
+	.main-image-slider i{
+		font-size: 2rem;
+	}	
+	
+	.headers{
+		margin: 1.5rem 0 0 2rem;
+		text-shadow: 7px 5px 5px #7b7b7b;
+		letter-spacing: 10px;
+		font-size: 6.5rem;
+	}
+	
+	.wrapper-about-1 h1{
+		text-shadow: 7px 5px 5px #7b7b7b;
+		letter-spacing: 10px;
+		font-size: 6rem;
+	}
+	
+	.wrapper-about-1 p{
+		font-size: 2.1rem;
+		letter-spacing: 2px;
+		line-height: 1.7;
+	}
+	
+	.wrapper-taste{
+		grid-column-gap: 2rem;
+		margin: 11rem 0 0 5rem;
+	}
+	
+	.wrapper-taste-1 ul{
+		margin-top: 5rem;
+	}
+	
+	.wrapper-taste-1 ul li{
+		font-size: 4rem;
+		letter-spacing: 8px;
+		line-height: 2.1;
+	}
+	
+
+	.item-memories.selected h3{
+		font-size: 4rem;
+	}
+	.item-memories h3{
+		font-size: 4rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 5rem;
+	}
+	#memories button i{
+		font-size: 2rem;
+	}
+	
+
+
+	
+	.slider-comments{
+		height: 70%;
+		width: 60%;
+		left: 25%;
+		bottom: 5%;
+	}
+	.bg-container-comments{
+		width: 1000px;
+	}
+	.item-comments{
+		width: 1000px;
+	}
+	.contents-comments{
+		width: 90%;
+	}
+
+	#comments p{
+		font-size: 2rem;
+		letter-spacing: 5px;
+	}
+	#comments h3{
+		font-size: 3rem;
+		margin-top: 2rem;
+	}
+
+	#comments p.quote-l{
+		font-size: 7rem;
+		margin-top: 3rem;
+	}
+	#comments p.quote-r{
+		font-size: 7rem;
+		margin-bottom: 2rem;
+	}
+	#comments button i{
+		font-size: 2rem;
+	}
+	
+	
+	
+	
+	.wrapper-contact{
+		grid-column-gap: 3rem;
+		height: 60%;
+	}
+
+	.wrapper-contact-1 ul li{
+		margin-top: 1rem;
+	}
+	
+	.wrapper-contact-1 ul li a{
+		font-size: 2.2rem;
+		padding-top: 2rem;
+		line-height: 2.5;
+	}
+	
+	.wrapper-contact-1 ul li a i{
+		font-size: 4rem;
+		margin-right: 1.2rem;
+	}
+
+	
+	footer p{
+		letter-spacing: 2px;
+		font-size: 1.5rem;
+	}
+	
+	#contact img{
+		width: 150px;
+		height: 150px;
+	}
+	
+	@media (min-height: 1851px){
+		section{
+			height: 62vh;
+		}
+	}
+	@media (max-height: 1850px){
+		section{
+			height: 65vh;
+		}
+	}
+	@media (max-height: 1750px){
+		section{
+			height: 70vh;
+		}
+	}
+	@media (max-height: 1650px){
+		section{
+			height: 74vh;
+		}
+	}
+	@media (max-height: 1550px){
+		section{
+			height: 80vh;
+		}
+	}
+	@media (max-height: 1450px){
+		section{
+			height: 90vh;
+		}
+	}
+	@media (max-height: 1350px){
+		section{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 1100px){
+		section{
+			height: 115vh;
+		}
+	}
+	@media (max-height: 1000px){
+		section{
+			height: 125vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 137vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 155vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 180vh;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 210vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 255vh;
+		}
+		.wrapper-taste-1 ul li{
+			line-height: 1.9;
+			font-size: 3.5;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 330vh;
+		}
+		#contact img{
+			width: 125px;
+			height: 125px;
+		}
+	}
+	@media (max-height: 350px){
+		section{
+			height: 375vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 450vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 550vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 800vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 1000vh;
+		}
+	}
+}
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+################				Min-width: 1801 px						########################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+
+
+
+@media (min-width: 1801px) and (max-width: 2000px){
+	.menu-links li a{
+		font-size: 4rem;
+	}
+
+	.main-head{
+		width: 43%;
+		left: 6%;
+		top: 36%;
+	}
+	
+	.main-head h1{
+		letter-spacing: 0.9rem;
+		font-size: 8rem;
+		text-shadow: 7px 5px 5px #7b7b7b;
+		font-weight: 200;
+	}
+	
+	#tabak{
+		height: 56%;
+		width: 35%;
+		top: 22%;
+		right: 10%;
+	}
+	
+
+	#menu{
+		width: 75px;
+		top: 3rem;
+	}
+	
+	#menu div{
+		width: 20px;
+		height: 20px;
+		border: 3px solid white;
+	}
+
+
+	.main-icons{
+		border-radius: 20px 0 0 20px;
+		width: 100px;
+	}
+	
+	.main-icons i{
+		font-size: 3.6rem;
+		margin: 1rem 0;
+	}
+	
+	
+	.main-image-slider p{
+		font-size: 1rem;
+		padding-right: 2px;
+	}
+	
+	.main-image-slider h6{
+		font-size: 1.4rem;
+	}
+	.bg-container-home{
+		width: 1000px;
+	}
+	.item-home{
+		width: 500px;
+	}
+
+	
+	#home .main-image-slider i{
+		font-size: 2.2rem;
+	}	
+	
+	
+	.headers{
+		text-shadow: 7px 5px 5px #7b7b7b;
+		font-size: 6rem;
+		letter-spacing: 10px;
+	}
+	
+	.wrapper-about-1 h1{
+		text-shadow: 7px 5px 5px #7b7b7b;
+		letter-spacing: 10px;
+		font-size: 6rem;
+	}
+	
+	.wrapper-about-1 p{
+		font-size: 1.9rem;
+		letter-spacing: 2px;
+		line-height: 1.7;
+		margin-top: 3rem;
+		font-weight: 500;
+	}
+	
+	.wrapper-taste{
+		grid-column-gap: 1rem;
+		margin: 11rem 3rem 0 3rem;
+	}
+	
+	.wrapper-taste-1 ul{
+		margin-top: 5rem;
+	}
+	
+	.wrapper-taste-1 ul li{
+		font-size: 3.3rem;
+		letter-spacing: 7px;
+		line-height: 2.2;
+	}
+	
+	
+	.item-memories.selected h3{
+		font-size: 3.5rem;
+	}
+	.item-memories h3{
+		font-size: 3.5rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 4.5rem;
+	}
+	#memories button i{
+		font-size: 1.7rem;
+	}
+	
+	
+
+	
+	.slider-comments{
+		height: 70%;
+		width: 54%;
+		left: 25%;
+		bottom: 5%;
+	}
+	.bg-container-comments{
+		width: 800px;
+	}
+	.item-comments{
+		width: 800px;
+	}
+	.contents-comments{
+		width: 90%;
+	}
+
+	#comments p{
+		font-size: 1.7rem;
+		font-weight: 100;
+		letter-spacing: 5px;
+	}
+	#comments h3{
+		font-size: 3rem;
+		margin-top: 2rem;
+	}
+
+	#comments p.quote-l{
+		font-size: 7rem;
+		margin-top: 3rem;
+	}
+	#comments p.quote-r{
+		font-size: 7rem;
+		margin-bottom: 2rem;
+	}
+	#comments button i{
+		font-size: 2rem;
+	}
+		
+	
+	.wrapper-contact{
+		grid-column-gap: 3rem;
+		height: 60%;
+	}
+
+	.wrapper-contact-1 ul li{
+		margin-top: 1rem;
+	}
+	
+	.wrapper-contact-1 ul li a{
+		font-size: 2.2rem;
+	}
+
+	
+	.wrapper-contact-1 ul li a i{
+		font-size: 4rem;
+		margin-right: 1.2rem;
+	}
+	
+	footer p{
+		font-size: 1.5rem;
+	}
+	#contact img{
+		width: 150px;
+		height: 150px;
+	}
+	
+	
+	@media (min-height: 1851px){
+		section{
+			height: 55vh;
+		}
+	}
+	@media (max-height: 1850px){
+		section{
+			height: 60vh;
+		}
+	}
+	@media (max-height: 1750px){
+		section{
+			height: 65vh;
+		}
+	}
+	@media (max-height: 1650px){
+		section{
+			height: 70vh;
+		}
+	}
+	@media (max-height: 1550px){
+		section{
+			height: 74vh;
+		}
+	}
+	@media (max-height: 1450px){
+		section{
+			height: 80vh;
+		}
+	}
+	@media (max-height: 1350px){
+		section{
+			height: 86vh;
+		}
+	}
+	@media (max-height: 1250px){
+		section{
+			height: 94vh;
+		}
+	}
+	@media (max-height: 1200px){
+		section{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 1080px){
+		section{
+			height: 110vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 120vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 137vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 160vh;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 195vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 235vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 290vh;
+		}
+		#contact img{
+			width: 125px;
+			height: 125px;
+		}
+	}
+	@media (max-height: 350px){
+		section{
+			height: 325vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 400vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 500vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 700vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 900vh;
+		}
+	}
+}
+
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+################				Min-width: 1601 px						########################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+
+
+
+@media (min-width: 1601px) and (max-width: 1800px){
+	.menu-links li a{
+		font-size: 2.5rem;
+	}
+
+	.main-head{
+		width: 45%;
+		left: 6%;
+		top: 36%;
+	}
+	
+	.main-head h1{
+		letter-spacing: 0.9rem;
+		font-size: 7rem;
+		text-shadow: 7px 5px 5px #7b7b7b;
+		text-align: center;
+		font-weight: 200;
+	}
+	
+
+	#menu{
+		width: 80px;
+		top: 5%;
+		right: 4%;
+	}
+	
+	#menu div{
+		margin-left: 1px;
+		margin-top: 1px;
+		width: 20px;
+		height: 20px;
+		border: 2px solid white;
+		border-radius: 50%;
+	}
+
+
+	.main-icons{
+		border-radius: 20px 0 0 20px;
+		width: 100px;
+		height: 28%;
+	}
+	
+	.main-icons i{
+		font-size: 3.5rem;
+		margin: 1rem 0;
+	}
+	
+	.main-image-slider p{
+		font-size: 0.9rem;
+		padding-right: 2px;
+	}
+	
+	.main-image-slider h6{
+		font-size: 1.3rem;
+	}
+	.bg-container-home{
+		width: 850px;
+	}
+	.item-home{
+		width: 425px;
+	}
+	
+	#home .main-image-slider i{
+		font-size: 1.5rem;
+	}	
+	
+	
+	.headers{
+		margin: 1.5rem 0 0 2rem;
+		text-shadow: 7px 5px 5px #7b7b7b;
+		letter-spacing: 10px;
+		font-size: 6rem;
+	}
+	
+
+	
+	.wrapper-about-1 h1{
+		text-shadow: 7px 5px 5px #7b7b7b;
+		letter-spacing: 10px;
+		font-size: 6rem;
+	}
+	
+	.wrapper-about-1 p{
+		font-size: 1.7rem;
+		letter-spacing: 2px;
+		line-height: 1.7;
+	}
+	
+	
+	.wrapper-taste{
+		grid-column-gap: 2rem;
+		margin: 12rem 4rem 0 4rem;
+		height: 70%;
+	}
+	
+	.wrapper-taste-1 ul{
+		margin-top: 3rem;
+	}
+	
+	.wrapper-taste-1 ul li{
+		font-size: 3.3rem;
+		letter-spacing: 7px;
+		line-height: 2.2;
+	}
+	
+
+	.item-memories.selected h3{
+		font-size: 3rem;
+	}
+	.item-memories h3{
+		font-size: 3rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 4rem;
+	}
+	#memories button i{
+		font-size: 1.5rem;
+	}
+	
+	
+
+	
+	.slider-comments{
+		height: 70%;
+		width: 54%;
+		left: 25%;
+		bottom: 7%;
+	}
+	.bg-container-comments{
+		width: 700px;
+	}
+	.item-comments{
+		width: 700px;
+	}
+	.contents-comments{
+		width: 90%;
+	}
+
+	#comments p{
+		font-size: 1.5rem;
+		letter-spacing: 5px;
+	}
+	#comments h3{
+		font-size: 3rem;
+		margin-top: 2rem;
+	}
+
+	#comments p.quote-l{
+		font-size: 6rem;
+	}
+	#comments p.quote-r{
+		font-size: 6rem;
+	}
+	#comments button i{
+		font-size: 2rem;
+	}
+	
+	
+	
+	.wrapper-contact{
+		grid-column-gap: 3rem;
+		height: 60%;
+	}
+	
+	.wrapper-contact-1 ul{
+		list-style: none;
+		margin-top: 1rem;
+	}
+
+	.wrapper-contact-1 ul li{
+		margin-top: 1rem;
+	}
+	
+	.wrapper-contact-1 ul li a{
+		font-size: 2.2rem;
+		letter-spacing: 2px;
+		padding-top: 2rem;
+		line-height: 2.5;
+	}
+	
+	.wrapper-contact-1 ul li a i{
+		font-size: 4rem;
+		margin-right: 1.2rem;
+	}
+
+	
+	footer p{
+		font-size: 1.5rem;
+	}
+	
+	#contact img{
+		width: 150px;
+		height: 150px;
+	}
+	
+	
+	@media (min-height: 1451px){
+		section{
+			height: 69vh;
+		}
+	}
+	@media (max-height: 1450px){
+		section{
+			height: 80vh;
+		}
+	}
+	@media (max-height: 1350px){
+		section{
+			height: 85vh;
+		}
+	}
+	@media (max-height: 1250px){
+		section{
+			height: 90vh;
+		}
+	}
+	@media (max-height: 1150px){
+		section{
+			height: 97vh;
+		}
+	}
+	@media (max-height: 1100px){
+		section{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 1000px){
+		section{
+			height: 110vh;
+		}
+	}
+	@media (max-height: 900px){
+		section{
+			height: 120vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 140vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 160vh;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 180vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 200vh;
+		}
+	}
+	@media (max-height: 500px){
+		section{
+			height: 220vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 250vh;
+		}
+		#contact img{
+			width: 100px;
+			height: 100px;
+		}
+	}
+	@media (max-height: 400px){
+		section{
+			height: 280vh;
+		}
+	}
+	@media (max-height: 350px){
+		section{
+			height: 330vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 390vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 500vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 650vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 1000vh;
+		}
+	}
+}
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+################				Min-width: 1601 px						########################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+
+
+
+@media (min-width: 1401px) and (max-width: 1600px){
+	.menu-links li a{
+		font-size: 3rem;
+	}
+
+	.main-head{
+		width: 39%;
+		left: 8%;
+		top: 35%;
+	}
+	
+	.main-head h1{
+		letter-spacing: 0.7rem;
+		font-size: 5.5rem;
+		text-align: center;
+	}
+
+	#menu{
+		width: 50px;
+	}
+	
+	#menu div{
+		width: 12px;
+		height: 12px;
+		border: 2px solid white;
+	}
+
+	.main-icons{
+		border-radius: 20px 0 0 20px;
+		top: 36%;
+		width: 80px;
+		height: 28%;
+	}
+	.main-icons i{
+		font-size: 3rem;
+		margin: 1rem 0;
+	}
+	
+	.main-image-slider p{
+		font-size: 0.8rem;
+		padding-right: 2px;
+	}
+	.main-image-slider h6{
+		font-size: 1.2rem;
+	}
+	.bg-container-home{
+		width: 750px;
+	}
+	.item-home{
+		width: 375px;
+		margin-left: 3px;
+	}
+	.main-image-slider i{
+		font-size: 2rem;
+		margin-left: 1px;
+	}	
+	
+	.headers{
+		text-shadow: 7px 5px 5px #7b7b7b;
+		letter-spacing: 5px;
+		font-size: 5.5rem;
+	}
+
+
+	.wrapper-about{
+		grid-template-columns: 45% auto;
+		grid-column-gap: 5rem;
+		padding: 2rem;
+		margin: 4rem 0 0 0;
+	}
+	
+	.wrapper-about-1 h1{
+		text-shadow: 7px 5px 5px #7b7b7b;
+		letter-spacing: 10px;
+		font-size: 4rem;
+	}
+	
+	.wrapper-about-1 p{
+		font-size: 1.7rem;
+		letter-spacing: 2px;
+		line-height: 1.5;
+		font-weight: 600;
+	}
+
+	
+	.wrapper-taste{
+		height: 70%;
+		margin: 10rem 2rem 0 2rem;
+	}
+	
+	.wrapper-taste-1 ul{
+		margin-top: 4rem;
+	}
+	
+	.wrapper-taste-1 ul li{
+		font-size: 2.8rem;
+		letter-spacing: 7px;
+		line-height: 2;
+	}
+	
+
+
+	.item-memories.selected h3{
+		font-size: 2.5rem;
+	}
+	.item-memories h3{
+		font-size: 2.5rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 3.5rem;
+	}
+
+	
+	.slider-comments{
+		height: 70%;
+		width: 54%;
+		left: 25%;
+		bottom: 7%;
+	}
+	.bg-container-comments{
+		width: 600px;
+	}
+	.item-comments{
+		width: 600px;
+	}
+	.contents-comments{
+		width: 90%;
+	}
+
+	#comments p{
+		font-size: 1.3rem;
+		letter-spacing: 5px;
+	}
+	#comments h3{
+		font-size: 3rem;
+		margin-top: 2rem;
+	}
+	#comments h3 span{
+		color: #fff;
+	}
+	.btn-com{
+		width: 2%;
+	}
+
+	#comments p.quote-l{
+		font-size: 6rem;
+		margin-top: 0;
+	}
+	#comments p.quote-r{
+		font-size: 6rem;
+	}
+	#comments button i{
+		font-size: 2rem;
+	}
+	
+	.wrapper-contact{
+		grid-column-gap: 3rem;
+		height: 60%;
+	}
+
+
+	.wrapper-contact-1 ul li{
+		margin-top: 1rem;
+	}
+	
+	.wrapper-contact-1 ul li a{
+		font-size: 2.2rem;
+		padding-top: 2rem;
+		line-height: 2;
+	}
+	
+	.wrapper-contact-1 ul li a i{
+		font-size: 3rem;
+		margin-right: 1.2rem;
+	}
+
+	
+	footer p{
+		letter-spacing: 2px;
+		font-size: 1.5rem;
+	}
+	
+	#contact img{
+		width: 150px;
+		height: 150px;
+		right: 5%;
+		bottom: 1rem;
+	}
+
+
+
+
+	@media (min-height: 1251px){
+		section{
+			height: 75vh;
+		}
+	}
+	@media (max-height: 1250px){
+		section{
+			height: 79vh;
+		}
+	}
+	@media (max-height: 1150px){
+		section{
+			height: 85vh;
+		}
+	}
+	@media (max-height: 1050px){
+		section{
+			height: 95vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 115vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 135vh;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 150vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 175vh;
+		}
+	}
+	@media (max-height: 500px){
+		section{
+			height: 190vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 200vh;
+		}
+		#contact img{
+			width: 100px;
+			height: 100px;
+		}
+	}
+	@media (max-height: 400px){
+		section{
+			height: 240vh;
+		}
+	}
+	@media (max-height: 350px){
+		section{
+			height: 260vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 300vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 400vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 500vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 600vh;
+		}
+	}
+}
+
+
+
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+################				Min-width: 1201 px						########################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+
+
+
+@media (min-width: 1201px) and (max-width: 1400px){
+	.item-memories.selected h3{
+		font-size: 2rem;
+	}
+	.item-memories h3{
+		font-size: 2rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 3rem;
+	}
+
+	
+	@media (min-height: 1251px){
+		section{
+			height: 50vh;
+		}
+		#memories{
+			height: 45vh;
+		}
+	}
+	@media (max-height: 1250px){
+		section{
+			height: 60vh;
+		}
+		#memories{
+			height: 55vh;
+		}
+	}
+	@media (max-height: 1150px){
+		section{
+			height: 70vh;
+		}
+		#memories{
+			height: 60vh;
+		}
+	}
+	@media (max-height: 1050px){
+		section{
+			height: 80vh;
+		}
+		#memories{
+			height: 60vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 95vh;
+		}
+		#memories{
+			height: 70vh;
+		}
+	}
+	@media (max-height: 875px){
+		section{
+			height: 100vh;
+		}
+		#memories{
+			height: 90vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 110vh;
+		}
+		#memories{
+			height: 95vh;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 115vh;
+		}
+		#memories{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 140vh;
+		}
+		#memories{
+			height: 110vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 160vh;
+		}
+		#memories{
+			height: 140vh;
+		}
+	}
+	@media (max-height: 350px){
+		section{
+			height: 230vh;
+		}
+		#memories{
+			height: 210vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 270vh;
+		}
+		#memories{
+			height: 260vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 360vh;
+		}
+		#memories{
+			height: 330vh;
+		}
+	}
+	@media (max-height: 170px){
+		section{
+			height: 500vh;
+		}
+		#memories{
+			height: 500vh;
+		}
+	}
+}
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##################			Min-width :	1000px 			 #############################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+@media (min-width: 1001px) and (max-width:1200px){
+
+
+	.bg-container-home{
+		width: 550px;
+	}
+	.item-home{
+		width: 275px;
+	}
+
+	#home button i{
+		font-size: 1.2rem;
+	}
+	.main-icons{
+		width: 50px;
+	}
+	.main-icons i{
+		font-size: 1.6rem;
+		margin: 0.6rem 0;
+	}
+	.main-head{
+		width: 32%;
+		top: 35%;
+	}
+	.main-head h1{
+		font-size: 3.5rem;
+	}
+	.main-image-slider p{
+		font-size: 0.5rem;
+	}
+	.main-image-slider h6{
+		font-size: 0.8rem;
+	}
+
+	.wrapper-about{
+		margin: 5.5rem 0 0 0;
+	}
+	.wrapper-about-1 p{
+		margin-top: 4rem;
+		font-size: 1rem;
+	}
+
+	.wrapper-taste-1 ul li{
+		font-weight: 100;
+		font-size: 2rem;
+		line-height: 2;
+	}
+		
+	.item-memories.selected h3{
+		font-size: 2rem;
+	}
+	.item-memories h3{
+		font-size: 2rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 3rem;
+	}
+	#memories button i{
+		font-size: 1rem;
+	}
+
+		
+	.slider-comments{
+		height: 80%;
+		width: 55%;
+		position: absolute;
+		left: 25%;
+		bottom: 5%;
+		display: flex;
+	}
+	.bg-container-comments{
+		width: 500px;
+	}
+	.item-comments{
+		width: 500px;
+	}
+
+	#comments p{
+		font-size: 1.1rem;
+	}
+	#comments h3{
+		font-size: 2rem;
+		margin-top: 1rem;
+	}
+
+	#comments p.quote-l{
+		font-size: 7rem;
+		color: #92000a;
+		font-family: 'Lobster', cursive;
+	}
+	#comments p.quote-r{
+		font-size: 7rem;
+		margin-bottom: -3rem;
+	}
+
+
+	@media (min-height: 1251px){
+		section{
+			height: 50vh;
+		}
+		#memories{
+			height: 40vh;
+		}
+	}
+	@media (max-height: 1250px){
+		section{
+			height: 55vh;
+		}
+	}
+	@media (max-height: 1150px){
+		section{
+			height: 60vh;
+		}
+	}
+	@media (max-height: 1050px){
+		section{
+			height: 65vh;
+		}
+		#memories{
+			height: 55vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 70vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 75vh;
+		}
+		#memories{
+			height: 70vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 80vh;
+		}
+		#memories{
+			height: 75vh;
+		}
+		#contact img{
+			width: 70px;
+			height: 70px;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 100vh;
+		}
+		#memories{
+			height: 95vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 115vh;
+		}
+		#memories{
+			height: 105vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 145vh;
+		}
+		#memories{
+			height: 140vh;
+		}
+	}
+	@media (max-height: 350px){
+		section{
+			height: 200vh;
+		}
+		#memories{
+			height: 200vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 250vh;
+		}
+		#memories{
+			height: 250vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 340vh;
+		}
+		#memories{
+			height: 320vh;
+		}
+	}
+	@media (max-height: 170px){
+		section{
+			height: 450vh;
+		}
+		#memories{
+			height: 45	0vh;
+		}
+	}
+}
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##################			Min-width :	800px 			 #############################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+@media (min-width: 801px) and (max-width:1000px){
+
+	.bg-container-home{
+		width: 400px;
+	}
+	.item-home{
+		width: 200px;
+	}
+	#home button i{
+		font-size: 0.9rem;
+	}
+	.main-icons{
+		width: 45px;
+		border-radius: 9px 0 0 9px;
+	}
+	.main-icons i{
+		font-size: 1.6rem;
+		margin: 0.6rem 0;
+	}
+	.main-head{
+		width: 35%;
+		top: 35%;
+	}
+	.main-head h1{
+		font-size: 3rem;
+	}
+	.main-image-slider p{
+		font-size: 0.4rem;
+	}
+	.main-image-slider h6{
+		font-size: 0.7rem;
+	}
+	#menu{
+		width: 25px;
+	}
+	#menu div{
+		width: 6px;
+		height: 6px;
+	}
+	
+	.headers{
+		font-size: 2rem;
+	}
+
+	.wrapper-about{
+		margin: 3rem 0 0 0;
+	}
+	.wrapper-about-1 h1{
+		font-size: 2rem;
+	}
+	.wrapper-about-1 p{
+		margin-top: 2rem;
+		font-size: 0.9rem;
+	}
+	.wrapper-taste-1 ul li{
+		font-weight: 100;
+		font-size: 1.6rem;
+		line-height: 2;
+	}
+
+	.item-memories.selected h3{
+		font-size: 1.7rem;
+	}
+	.item-memories h3{
+		font-size: 1.7rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 2.7rem;
+	}
+	#memories button i{
+		font-size: 0.9rem;
+	}
+
+	.slider-comments{
+		height: 80%;
+		width: 56%;
+		position: absolute;
+		left: 25%;
+		bottom: 5%;
+		display: flex;
+	}
+	.bg-container-comments{
+		width: 400px;
+		height: 100%;
+		overflow: hidden;
+	}
+	.item-comments{
+		display: flex;
+		width: 400px;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#comments p{
+		font-size: 1rem;
+		font-family: 'Lobster', cursive;
+		color: white;
+	}
+	#comments h3{
+		font-size: 1.7rem;
+		margin-top: 1rem;
+	}
+
+	#comments p.quote-r{
+		margin-bottom: -3rem;
+	}
+
+	.wrapper-contact{
+		grid-template-columns: 45% auto;
+		grid-column-gap: 2rem;
+	}
+	.wrapper-contact-1 ul li a{
+		font-size: 0.9rem;
+		line-height: 2.5;
+		letter-spacing: 2px;
+	}
+	.wrapper-contact-1 ul li a i{
+		font-size: 1.5rem;
+	}
+	.wrapper-contact-1 ul{
+		margin-top: 1rem;
+	}
+	footer p{
+		font-size: 0.7rem;
+	}
+	#contact img{
+		bottom: 0;
+		width: 70px;
+		height: 70px;
+	}
+
+		
+	
+	@media (min-height: 1251px){
+		section{
+			height: 40vh;
+		}
+		#memories{
+			height: 35vh;
+		}
+	}
+	@media (max-height: 1250px){
+		section{
+			height: 45vh;
+		}
+		#memories{
+			height: 40vh;
+		}
+	}
+	@media (max-height: 1150px){
+		section{
+			height: 50vh;
+		}
+	}
+	@media (max-height: 1050px){
+		section{
+			height: 55vh;
+		}
+		#memories{
+			height: 50vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 60vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 70vh;
+		}
+		#memories{
+			height: 60vh;
+		}
+	}
+	@media (max-height: 700px){
+		section{
+			height: 80vh;
+		}
+		#memories{
+			height: 70vh;
+		}
+	}
+	@media (max-height: 600px){
+		section{
+			height: 100vh;
+		}
+		#memories{
+			height: 90vh;
+		}
+	}
+	@media (max-height: 500px){
+		section{
+			height: 115vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 135vh;
+		}
+		#memories{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 400px){
+		section{
+			height: 145vh;
+		}
+		#memories{
+			height: 120vh;
+		}
+	}
+	@media (max-height: 350px){
+		section{
+			height: 165vh;
+		}
+		#memories{
+			height: 140vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 200vh;
+		}
+		#memories{
+			height: 160vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 250vh;
+		}
+		#memories{
+			height: 200vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 300vh;
+		}
+		#memories{
+			height: 300vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 450vh;
+		}
+		#memories{
+			height: 400vh;
+		}
+	}
+	@media (max-height: 100px){
+		section{
+			height: 600vh;
+		}
+		#memories{
+			height: 550vh;
+		}
+	}
+	@media (max-height: 75px){
+		section{
+			height: 700vh;
+		}
+		#memories{
+			height: 650vh;
+		}
+	}
+}
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##################			Min-width :	600px 			 #############################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+@media (min-width: 601px) and (max-width:800px){
+	.menu-links li a{
+		font-size: 1.5rem;
+	}
+
+	.bg-container-home{
+		width: 300px;
+	}
+	.item-home{
+		width: 150px;
+	}
+
+	.main-image-slider p{
+		font-size: 5px;
+	}
+	.main-image-slider h6{
+		font-size: 0.4rem;
+	}
+
+	#home button i{
+		font-size: 0.7rem;
+	}
+
+	.main-head{
+		width: 37%;
+		left: 10%;
+		top: 35%;
+	}
+	.main-head h1{
+		font-size: 2.3rem;
+	}
+	.main-icons{
+		width: 30px;
+		border-radius: 4px 0 0 4px;
+	}
+	.main-icons i{
+		font-size: 1.2rem;
+		margin: 0.4rem 0;
+	}
+	#menu{
+		width: 15px;
+	}
+	#menu div{
+		width: 4px;
+		height: 4px;
+	}
+	#tabak{
+		width: 36%;
+		right: 8%;
+	}
+	.headers{
+		font-size: 2rem;
+	}
+	.wrapper-about{
+		margin: 2.5rem 0 0 0;
+		padding: 1rem 2rem 0 2rem;
+	}
+	.wrapper-about-1 h1{
+		font-size: 2rem;
+	}
+	.wrapper-about-1 p{
+		font-size: 0.6rem;
+		margin-top: 2rem;
+	}
+	
+	.wrapper-taste{
+		margin: 4rem 2rem 0 2rem;
+	}
+	.wrapper-taste-1 ul li{
+		font-size: 1.2rem;
+		line-height: 2;
+	}
+
+
+	.item-memories.selected h3{
+		font-size: 1.2rem;
+	}
+	.item-memories h3{
+		font-size: 1.2rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 2.2rem;
+	}
+	#memories button i{
+		font-size: 0.8rem;
+	}
+
+
+	.slider-comments{
+		height: 80%;
+		width: 60%;
+		position: absolute;
+		left: 25%;
+		bottom: 5%;
+		display: flex;
+	}
+	.bg-container-comments{
+		width: 300px;
+	}
+	.item-comments{
+		width: 300px;
+	}
+
+	#comments p{
+		font-size: 0.7rem;
+	}
+	#comments h3{
+		font-size: 1.5rem;
+		margin-top: 1rem;
+	}
+
+	#comments p.quote-l, #comments p.quote-r{
+		font-size: 5rem;
+	}
+	#comments p.quote-r{
+		margin-bottom: -1rem;
+	}
+	#comments p.quote-l{
+		margin-top: 1rem;
+	}
+	#comments button i{
+		font-size: 1.2rem;
+	}
+	.btn-com{
+		width: 2.5%;
+	}
+
+	.wrapper-contact-1 ul li a{
+		font-size: 0.8rem;
+		line-height: 2.5;
+	}
+	.wrapper-contact-1 ul li a i{
+		font-size: 1.3rem;
+	}
+	.wrapper-contact{
+		height: 70%;
+		top: 10%;
+		grid-template-columns: 45% auto;
+		grid-column-gap: 2.5rem;
+	}
+	.wrapper-contact-1 ul{
+		margin-top: 2rem;
+	}
+	
+	footer p{
+		font-size: 0.6rem;
+	}
+
+	#contact img{
+		width: 60px;
+		height: 60px;
+	}
+	
+	@media (min-height: 1251px){
+		section{
+			height: 40vh;
+		}
+		#memories{
+			height: 30vh;
+		}
+	}
+	@media (max-height: 1250px){
+		section{
+			height: 45vh;
+		}
+		#memories{
+			height: 40vh;
+		}
+	}
+	@media (max-height: 1150px){
+		section{
+			height: 50vh;
+		}
+	}
+	@media (max-height: 1050px){
+		section{
+			height: 55vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 60vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 70vh;
+		}
+		#memories{
+			height: 55vh;
+		}
+	}
+	@media (max-height: 700px){
+		section{
+			height: 80vh;
+		}
+	}
+	@media (max-height: 600px){
+		section{
+			height: 100vh;
+		}
+		#memories{
+			height: 80vh;
+		}
+	}
+	@media (max-height: 500px){
+		section{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 400px){
+		section{
+			height: 105vh;
+		}
+		#memories{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 350px){
+		section{
+			height: 115vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 130vh;
+		}
+		#memories{
+			height: 120vh;
+		}
+	}
+	@media (max-height: 275px){
+		section{
+			height: 150vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 180vh;
+		}
+		#memories{
+			height: 150vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 200vh;
+		}
+		#memories{
+			height: 170vh;
+		}
+	}
+	@media (max-height: 175px){
+		section{
+			height: 240vh;
+		}
+		#memories{
+			height: 200vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 280vh;
+		}
+		#memories{
+			height: 250vh;
+		}
+	}
+	@media (max-height: 125px){
+		section{
+			height: 350vh;
+		}
+		#memories{
+			height: 300vh;
+		}
+	}
+	@media (max-height: 100px){
+		section{
+			height: 550vh;
+		}
+		#memories{
+			height: 550vh;
+		}
+	}
+	@media (max-height: 50px){
+		section{
+			height: 750vh;
+		}
+		#memories{
+			height: 750vh;
+		}
+	}
+}
+
+
+
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##################			Min-width :	450px 			 #############################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+@media (min-width: 451px) and (max-width:600px){
+	.menu-links li a{
+		font-size: 1.2rem;
+	}
+
+	.main-image-slider{
+		height: 11%;
+		grid-template-columns: 2% 90% 2%;
+		grid-gap: 10px;
+	}
+	.bg-container-home{
+		width: 250px;
+	}
+	.content-home{
+		margin-left: 8px;
+	}
+	.item-home{
+		width: 125px;
+		margin-left: 1px;
+	}
+	.main-image-slider p{
+		font-size: 5px;
+	}
+	.main-image-slider h6{
+		font-size: 0.3rem;
+	}
+
+	#home .main-image-slider i{
+		font-size: 0.5rem;
+	}
+	.main-head{
+		width: 39%;
+		left: 10%;
+		top: 35%;
+	}
+	.main-head h1{
+		font-size: 1.7rem;
+	}
+	.main-icons{
+		width: 20px;
+		border-radius: 4px 0 0 4px;
+	}
+	.main-icons i{
+		font-size: 1rem;
+		margin: 0.2rem 0;
+	}
+	#menu{
+		width: 15px;
+	}
+	#menu div{
+		border: 1px solid #fff;
+		width: 3px;
+		height: 3px;
+	}
+	#tabak{
+		width: 36%;
+		right: 8%;
+	}
+	.headers{
+		font-size: 1.5rem;
+	}
+
+
+	.wrapper-about{
+		margin: 2rem 0 0 0;
+		padding: 1rem 0 0 2rem;
+	}
+	.wrapper-about-1 h1{
+		font-size: 1.3rem;
+		text-shadow: 3px 3px 3px #000;
+		letter-spacing: 6px;
+	}
+	.wrapper-about-1 p{
+		font-size: 7px;
+		letter-spacing: 2px;
+		margin-top: 1rem;
+	}
+
+	.wrapper-taste{
+		margin: 4rem 2rem 0 2rem;
+	}
+	.wrapper-taste-1 ul{
+		margin-top: 1rem;
+	}
+	.wrapper-taste-1 ul li{
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+	.wrapper-taste-1 ul li:hover{
+		margin-left: 1rem;
+	}
+	.wrapper-taste-1 ul li.selected-taste{
+		margin-left: 1rem;
+	}
+
+	.item-memories.selected h3{
+		font-size: 1rem;
+	}
+	.item-memories h3{
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 1.5rem;
+	}
+	#memories button i{
+		font-size: 0.5rem;
+	}
+	#memories .btn-mem-l{
+		margin-right: 1rem;
+	}
+	#memories .btn-mem-r{
+		margin-left: 1rem;
+	}
+
+	.slider-comments{
+		height: 80%;
+		width: 60%;
+		left: 25%;
+		bottom: 2%;
+	}
+	.bg-container-comments{
+		width: 200px;
+	}
+	.item-comments{
+		width: 200px;
+	}
+
+	#comments p{
+		font-size: 0.5rem;
+	}
+	#comments h3{
+		font-size: 1rem;
+		margin-top: 1rem;
+	}
+
+	#comments p.quote-l, #comments p.quote-r{
+		font-size: 4rem;
+	}
+	#comments p.quote-r{
+		margin-bottom: -1rem;
+	}
+	#comments p.quote-l{
+		margin-top: 1rem;
+	}
+	#comments button i{
+		font-size: 0.8rem;
+	}
+	.btn-com{
+		width: 2.5%;
+	}
+
+	.wrapper-contact-1 ul li a{
+		font-size: 0.64rem;
+		line-height: 1.7;
+	}
+	.wrapper-contact-1 ul li a i{
+		font-size: 1.2rem;
+	}
+	.wrapper-contact-1 #address i{
+		padding-bottom: 2rem;
+	}
+	.wrapper-contact{
+		height: 70%;
+		top: 10%;
+		grid-template-columns: 45% auto;
+		grid-column-gap: 1.5rem;
+	}
+	.wrapper-contact-1 ul{
+		margin-top: 1rem;
+	}
+	
+	footer p{
+		font-size: 0.5rem;
+	}
+
+	#contact img{
+		width: 50px;
+		height: 50px;
+		bottom: 0;
+	}
+	
+
+	@media (min-height: 1101px){
+		section{
+			height: 25vh;
+		}
+		#memories{
+			height: 20vh;
+		}
+	}
+	@media (max-height: 1100px){
+		section{
+			height: 28vh;
+		}
+		#memories{
+			height: 30vh;
+		}
+	}
+	@media (max-height: 1000px){
+		section{
+			height: 30vh;
+		}
+	}
+	@media (max-height: 900px){
+		section{
+			height: 35vh;
+		}
+	}
+	@media (max-height: 800px){
+		section{
+			height: 40vh;
+		}
+		#memories{
+			height: 35vh;
+		}
+	}
+	@media (max-height: 700px){
+		section{
+			height: 43vh;
+		}
+		#memories{
+			height: 40vh;
+		}
+	}
+	@media (max-height: 600px){
+		section{
+			height: 50vh;
+		}
+		#memories{
+			height: 50vh;
+		}
+	}
+	@media (max-height: 500px){
+		section{
+			height: 70vh;
+		}
+		#memories{
+			height: 70vh;
+		}
+	}
+	@media (max-height: 400px){
+		section{
+			height: 80vh;
+		}
+		#memories{
+			height: 80vh;
+		}
+	}
+	@media (max-height: 325px){
+		section{
+			height: 100vh;
+		}
+		#memories{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 115vh;
+		}
+		#memories{
+			height: 115vh;
+		}
+	}
+	@media (max-height: 225px){
+		section{
+			height: 130vh;
+		}
+		#memories{
+			height: 130vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 150vh;
+		}
+		#memories{
+			height: 150vh;
+		}
+	}
+	@media (max-height: 175px){
+		section{
+			height: 175vh;
+		}
+		#memories{
+			height: 175vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 240vh;
+		}
+	}
+	@media (max-height: 125px){
+		section{
+			height: 260vh;
+		}
+		#memories{
+			height: 250vh;
+		}
+	}
+	@media (max-height: 100px){
+		section{
+			height: 350vh;
+		}
+		#memories{
+			height: 300vh;
+		}
+	}
+	@media (max-height: 75px){
+		section{
+			height: 500vh;
+		}
+		#memories{
+			height: 450vh;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##################			Min-width :	400px 			 #############################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+@media (min-width: 401px) and (max-width:450px){
+	.menu-links li a{
+		font-size: 1.2rem;
+	}
+
+	.main-image-slider{
+		height: 11%;
+		grid-template-columns: 2% 90% 2%;
+		grid-gap: 10px;
+	}
+	.bg-container-home{
+		width: 150px;
+	}
+	.content-home{
+		margin-left: 8px;
+	}
+	.item-home{
+		width: 75px;
+		margin-left: 1px;
+	}
+
+	.main-image-slider p{
+		font-size: 3px;
+	}
+	.main-image-slider h6{
+		font-size: 5px;
+	}
+
+	#home .main-image-slider i{
+		font-size: 0.5rem;
+	}
+	.main-head{
+		width: 40%;
+		left: 7%;
+		top: 35%;
+	}
+	.main-head h1{
+		font-size: 1.4rem;
+	}
+	.main-icons{
+		width: 20px;
+		border-radius: 4px 0 0 4px;
+	}
+	.main-icons i{
+		font-size: 0.8rem;
+		margin: 0.2rem 0;
+	}
+	#menu{
+		width: 10px;
+	}
+	#menu div{
+		border: 1px solid #fff;
+		width: 2px;
+		height: 2px;
+	}
+	.menu-links li a{
+		font-size: 1rem;
+	}
+	#tabak{
+		width: 36%;
+		right: 10%;
+		padding: 2px;
+		box-shadow: 0 0 1px 1px #fff;
+	}
+	.headers{
+		margin: 1rem 0 0 2rem;
+		font-size: 1.5rem;
+		letter-spacing: 2px;
+	}
+
+
+	.wrapper-about{
+		margin: 2rem 1rem 0 0;
+		padding: 0 0 0 2rem;
+	}
+	.wrapper-about-1 h1{
+		font-size: 0.9rem;
+		text-shadow: 3px 3px 3px #000;
+		letter-spacing: 5px;
+	}
+	.wrapper-about-1 p{
+		font-size: 7px;
+		letter-spacing: 1px;
+		margin-top: 1rem;
+	}
+
+	.wrapper-taste{
+		margin: 2.5rem 2rem 0 2rem;
+	}
+	.wrapper-taste-1 ul{
+		margin-top: 1rem;
+	}
+	.wrapper-taste-1 ul li{
+		font-size: 0.8rem;
+		line-height: 1.8;
+	}
+	.wrapper-taste-1 ul li:hover{
+		margin-left: 1rem;
+	}
+	.wrapper-taste-1 ul li.selected-taste{
+		margin-left: 1rem;
+	}
+
+	#memories .btn-mem-l{
+		margin-right: 1rem;
+	}
+	#memories .btn-mem-r{
+		margin-left: 1rem;
+	}
+	.item-memories.selected h3{
+		font-size: 1rem;
+	}
+	.item-memories h3{
+		font-size: 1rem;
+		margin-bottom: 0.3rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 1.2rem;
+	}
+	#memories button i{
+		font-size: 0.4rem;
+	}
+
+
+	.slider-comments{
+		height: 80%;
+		width: 60%;
+		left: 25%;
+		bottom: 2%;
+	}
+	.bg-container-comments{
+		width: 150px;
+	}
+	.item-comments{
+		width: 150px;
+	}
+
+	#comments p{
+		font-size: 0.4rem;
+	}
+	#comments h3{
+		font-size: 0.8rem;
+		margin-top: 1rem;
+	}
+
+	#comments p.quote-l, #comments p.quote-r{
+		font-size: 3rem;
+	}
+	#comments p.quote-r{
+		margin-bottom: -1rem;
+	}
+	#comments p.quote-l{
+		margin-top: 1rem;
+	}
+	#comments button i{
+		font-size: 0.6rem;
+	}
+	.btn-com{
+		width: 2.5%;
+	}
+
+	.wrapper-contact-1 ul li a{
+		font-size: 0.4rem;
+		line-height: 1;
+		letter-spacing: 1px;
+	}
+	.wrapper-contact-1 ul li a i{
+		font-size: 0.7rem;
+	}
+	.wrapper-contact-1 #address i{
+		padding-bottom: 1.5rem;
+	}
+	.wrapper-contact{
+		height: 50%;
+		top: 10%;
+		grid-template-columns: 45% auto;
+		grid-column-gap: 1rem;
+	}
+	.wrapper-contact-1 ul{
+		margin-top: 0.2rem;
+	}
+	
+	footer p{
+		font-size: 0.4rem;
+	}
+
+	#contact img{
+		width: 40px;
+		height: 40px;
+		bottom: 0;
+	}
+	
+
+	@media (min-height: 1001px){
+		section{
+			height: 21vh;
+		}
+		#memories{
+			height: vh;
+		}
+	}
+	@media (max-height: 1000px){
+		section{
+			height: 25vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 28vh;
+		}
+	}
+	@media (max-height: 900px){
+		section{
+			height: 29vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 30vh;
+		}
+	}
+	@media (max-height: 800px){
+		section{
+			height: 33vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 36vh;
+		}
+	}
+	@media (max-height: 700px){
+		section{
+			height: 37vh;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 40vh;
+		}
+	}
+	@media (max-height: 600px){
+		section{
+			height: 45vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 50vh;
+		}
+	}
+	@media (max-height: 500px){
+		section{
+			height: 55vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 65vh;
+		}
+	}
+	@media (max-height: 400px){
+		section{
+			height: 75vh;
+		}
+	}
+	@media (max-height: 325px){
+		section{
+			height: 85vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 95vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 225px){
+		section{
+			height: 125vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 140vh;
+		}
+	}
+	@media (max-height: 175px){
+		section{
+			height: 175vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 190vh;
+		}
+	}
+	@media (max-height: 125px){
+		section{
+			height: 220vh;
+		}
+	}
+	@media (max-height: 100px){
+		section{
+			height: 270vh;
+		}
+	}
+	@media (max-height: 85px){
+		section{
+			height: 350vh;
+		}
+	}
+	@media (max-height: 75px){
+		section{
+			height: 400vh;
+		}
+	}
+	@media (max-height: 65px){
+		section{
+			height: 500vh;
+		}
+	}
+}
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##################			Min-width :	350px 			 #############################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+@media (min-width: 350px) and (max-width:400px){
+
+	.main-image-slider{
+		height: 11%;
+		grid-template-columns: 2% 90% 2%;
+		grid-gap: 10px;
+	}
+	.bg-container-home{
+		width: 150px;
+	}
+	.content-home{
+		margin-left: 8px;
+	}
+	.item-home{
+		width: 75px;
+		margin-left: 1px;
+	}
+
+	.main-image-slider p{
+		font-size: 3px;
+	}
+	.main-image-slider h6{
+		font-size: 5px;
+	}
+
+	#home .main-image-slider i{
+		font-size: 0.5rem;
+	}
+	.main-head{
+		width: 40%;
+		left: 7%;
+		top: 35%;
+	}
+	.main-head h1{
+		font-size: 1.3rem;
+	}
+	.main-icons{
+		width: 20px;
+		border-radius: 4px 0 0 4px;
+	}
+	.main-icons i{
+		font-size: 0.8rem;
+		margin: 0.2rem 0;
+	}
+	#menu{
+		width: 10px;
+	}
+	#menu div{
+		border: 1px solid #fff;
+		width: 2px;
+		height: 2px;
+	}
+	.menu-links li a{
+		font-size: 1rem;
+	}
+	#tabak{
+		width: 36%;
+		right: 10%;
+		padding: 2px;
+		box-shadow: 0 0 1px 1px #fff;
+	}
+	.headers{
+		margin: 1rem 0 0 2rem;
+		font-size: 1.5rem;
+		letter-spacing: 2px;
+	}
+
+
+	.wrapper-about{
+		margin: 2rem 1rem 0 0;
+		padding: 0 0 0 2rem;
+	}
+	.wrapper-about-1 h1{
+		font-size: 0.9rem;
+		text-shadow: 3px 3px 3px #000;
+		letter-spacing: 5px;
+	}
+	.wrapper-about-1 p{
+		font-size: 7px;
+		letter-spacing: 1px;
+		margin-top: 1rem;
+	}
+
+	.wrapper-taste{
+		margin: 2.5rem 2rem 0 2rem;
+	}
+	.wrapper-taste-1 ul{
+		margin-top: 1rem;
+	}
+	.wrapper-taste-1 ul li{
+		font-size: 0.8rem;
+		line-height: 1.8;
+	}
+	.wrapper-taste-1 ul li:hover{
+		margin-left: 1rem;
+	}
+	.wrapper-taste-1 ul li.selected-taste{
+		margin-left: 1rem;
+	}
+
+	#memories .btn-mem-l{
+		margin-right: 1rem;
+	}
+	#memories .btn-mem-r{
+		margin-left: 1rem;
+	}
+	.item-memories.selected h3{
+		font-size: 1rem;
+	}
+	.item-memories h3{
+		font-size: 1rem;
+		margin-bottom: 0.3rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 1.2rem;
+	}
+	#memories button i{
+		font-size: 0.4rem;
+	}
+
+
+	.slider-comments{
+		height: 80%;
+		width: 60%;
+		left: 25%;
+		bottom: 2%;
+	}
+	.bg-container-comments{
+		width: 150px;
+	}
+	.item-comments{
+		width: 150px;
+	}
+
+	#comments p{
+		font-size: 0.4rem;
+	}
+	#comments h3{
+		font-size: 0.8rem;
+		margin-top: 1rem;
+	}
+
+	#comments p.quote-l, #comments p.quote-r{
+		font-size: 3rem;
+	}
+	#comments p.quote-r{
+		margin-bottom: -1rem;
+	}
+	#comments p.quote-l{
+		margin-top: 1rem;
+	}
+	#comments button i{
+		font-size: 0.6rem;
+	}
+	.btn-com{
+		width: 2.5%;
+	}
+
+	.wrapper-contact-1 ul li a{
+		font-size: 0.4rem;
+		line-height: 1;
+		letter-spacing: 1px;
+	}
+	.wrapper-contact-1 ul li a i{
+		font-size: 0.7rem;
+	}
+	.wrapper-contact-1 #address i{
+		padding-bottom: 1.5rem;
+	}
+	.wrapper-contact{
+		height: 50%;
+		top: 10%;
+		grid-template-columns: 45% auto;
+		grid-column-gap: 1rem;
+	}
+	.wrapper-contact-1 ul{
+		margin-top: 0.2rem;
+	}
+	
+	footer p{
+		font-size: 0.4rem;
+	}
+
+	#contact img{
+		width: 40px;
+		height: 40px;
+		bottom: 0;
+	}
+	
+
+	@media (min-height: 1001px){
+		section{
+			height: 21vh;
+		}
+	}
+	@media (max-height: 1000px){
+		section{
+			height: 25vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 28vh;
+		}
+		#memories{
+			height: 25vh;
+		}
+	}
+	@media (max-height: 900px){
+		section{
+			height: 29vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 30vh;
+		}
+	}
+	@media (max-height: 800px){
+		section{
+			height: 33vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 36vh;
+		}
+		#memories{
+			height: 35vh;
+		}
+	}
+	@media (max-height: 700px){
+		section{
+			height: 37vh;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 40vh;
+		}
+	}
+	@media (max-height: 600px){
+		section{
+			height: 45vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 50vh;
+		}
+	}
+	@media (max-height: 500px){
+		section{
+			height: 55vh;
+		}
+		#memories{
+			height: 50vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 65vh;
+		}
+	}
+	@media (max-height: 400px){
+		section{
+			height: 75vh;
+		}
+		#memories{
+			height: 70vh;
+		}
+	}
+	@media (max-height: 325px){
+		section{
+			height: 85vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 95vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 100vh;
+		}
+		#memories{
+			height: 90vh;
+		}
+	}
+	@media (max-height: 225px){
+		section{
+			height: 125vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 140vh;
+		}
+		#memories{
+			height: 125vh;
+		}
+	}
+	@media (max-height: 175px){
+		section{
+			height: 175vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 190vh;
+		}
+	}
+	@media (max-height: 125px){
+		section{
+			height: 220vh;
+		}
+		#memories{
+			height: 200vh;
+		}
+	}
+	@media (max-height: 100px){
+		section{
+			height: 270vh;
+		}
+	}
+	@media (max-height: 85px){
+		section{
+			height: 350vh;
+		}
+		#memories{
+			height: 300vh;
+		}
+	}
+	@media (max-height: 75px){
+		section{
+			height: 400vh;
+		}
+		#memories{
+			height: 400vh;
+		}
+	}
+	@media (max-height: 65px){
+		section{
+			height: 500vh;
+		}
+	}
+}
+
+
+
+
+
+/*
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##################			Min-width :	350px 			 #############################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+##############################################################################
+*/
+@media (max-width:349px){
+
+	.main-image-slider{
+		height: 11%;
+		grid-template-columns: 2% 90% 2%;
+		grid-gap: 10px;
+	}
+	.bg-container-home{
+		width: 130px;
+	}
+	.content-home{
+		margin-left: 8px;
+	}
+	.item-home{
+		width: 65px;
+		margin-left: 1px;
+	}
+
+	.main-image-slider p{
+		font-size: 3px;
+	}
+	.main-image-slider h6{
+		font-size: 5px;
+	}
+
+	#home .main-image-slider i{
+		font-size: 0.5rem;
+	}
+	.main-head{
+		width: 40%;
+		left: 7%;
+		top: 35%;
+	}
+	.main-head h1{
+		font-size: 1.3rem;
+	}
+	.main-icons{
+		width: 20px;
+		border-radius: 4px 0 0 4px;
+	}
+	.main-icons i{
+		font-size: 0.8rem;
+		margin: 0.2rem 0;
+	}
+	#menu{
+		width: 10px;
+	}
+	#menu div{
+		border: 1px solid #fff;
+		width: 2px;
+		height: 2px;
+	}
+	.menu-links li a{
+		font-size: 1rem;
+	}
+	#tabak{
+		width: 36%;
+		right: 10%;
+		padding: 2px;
+		box-shadow: 0 0 1px 1px #fff;
+	}
+	.headers{
+		margin: 1rem 0 0 1rem;
+		font-size: 1.3rem;
+		letter-spacing: 2px;
+	}
+
+
+	.wrapper-about{
+		margin: 1rem 1rem 0 0;
+		padding: 0 0 0 1rem;
+	}
+	.wrapper-about-1 h1{
+		font-size: 0.9rem;
+		text-shadow: 3px 3px 3px #000;
+		letter-spacing: 5px;
+	}
+	.wrapper-about-1 p{
+		font-size: 6px;
+		letter-spacing: 1px;
+		margin-top: 1rem;
+	}
+
+	.wrapper-taste{
+		margin: 2.5rem 1rem 0 1rem;
+	}
+	.wrapper-taste-1 ul{
+		margin-top: 1rem;
+	}
+	.wrapper-taste-1 ul li{
+		font-size: 0.8rem;
+		line-height: 1.8;
+	}
+	.wrapper-taste-1 ul li:hover{
+		margin-left: 1rem;
+	}
+	.wrapper-taste-1 ul li.selected-taste{
+		margin-left: 1rem;
+	}
+
+	#memories .btn-mem-l{
+		margin-right: 1rem;
+	}
+	#memories .btn-mem-r{
+		margin-left: 1rem;
+	}
+	.item-memories.selected h3{
+		font-size: 1rem;
+	}
+	.item-memories h3{
+		font-size: 1rem;
+		margin-bottom: 0.3rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		margin-top: 1.2rem;
+	}
+	#memories button i{
+		font-size: 0.4rem;
+	}
+
+
+	.slider-comments{
+		height: 80%;
+		width: 60%;
+		left: 25%;
+		bottom: 2%;
+	}
+	.bg-container-comments{
+		width: 150px;
+	}
+	.item-comments{
+		width: 150px;
+	}
+
+	#comments p{
+		font-size: 0.4rem;
+	}
+	#comments h3{
+		font-size: 0.8rem;
+		margin-top: 1rem;
+	}
+
+	#comments p.quote-l, #comments p.quote-r{
+		font-size: 3rem;
+	}
+	#comments p.quote-r{
+		margin-bottom: -1rem;
+	}
+	#comments p.quote-l{
+		margin-top: 1rem;
+	}
+	#comments button i{
+		font-size: 0.6rem;
+	}
+	.btn-com{
+		width: 2.5%;
+	}
+
+	.wrapper-contact-1 ul li a{
+		font-size: 0.3rem;
+		line-height: 1;
+		letter-spacing: 1px;
+	}
+	.wrapper-contact-1 ul li a i{
+		font-size: 0.7rem;
+	}
+	.wrapper-contact-1 #address i{
+		padding-bottom: 2rem;
+	}
+	.wrapper-contact{
+		height: 50%;
+		top: 10%;
+		grid-template-columns: 45% auto;
+		grid-column-gap: 1rem;
+	}
+	.wrapper-contact-1 ul{
+		margin-top: 0.2rem;
+	}
+	
+	footer p{
+		font-size: 4px;
+	}
+
+	#contact img{
+		width: 40px;
+		height: 40px;
+		bottom: 0;
+	}
+	
+
+	@media (min-height: 1001px){
+		section{
+			height: 21vh;
+		}
+		#memories{
+			height: 15vh;
+		}
+	}
+	@media (max-height: 1000px){
+		section{
+			height: 25vh;
+		}
+	}
+	@media (max-height: 950px){
+		section{
+			height: 28vh;
+		}
+	}
+	@media (max-height: 900px){
+		section{
+			height: 29vh;
+		}
+	}
+	@media (max-height: 850px){
+		section{
+			height: 30vh;
+		}
+	}
+	@media (max-height: 800px){
+		section{
+			height: 33vh;
+		}
+	}
+	@media (max-height: 750px){
+		section{
+			height: 36vh;
+		}
+	}
+	@media (max-height: 700px){
+		section{
+			height: 37vh;
+		}
+	}
+	@media (max-height: 650px){
+		section{
+			height: 40vh;
+		}
+	}
+	@media (max-height: 600px){
+		section{
+			height: 43vh;
+		}
+	}
+	@media (max-height: 550px){
+		section{
+			height: 50vh;
+		}
+	}
+	@media (max-height: 500px){
+		section{
+			height: 55vh;
+		}
+	}
+	@media (max-height: 450px){
+		section{
+			height: 65vh;
+		}
+	}
+	@media (max-height: 400px){
+		section{
+			height: 75vh;
+		}
+	}
+	@media (max-height: 325px){
+		section{
+			height: 85vh;
+		}
+	}
+	@media (max-height: 300px){
+		section{
+			height: 95vh;
+		}
+	}
+	@media (max-height: 250px){
+		section{
+			height: 100vh;
+		}
+	}
+	@media (max-height: 225px){
+		section{
+			height: 125vh;
+		}
+	}
+	@media (max-height: 200px){
+		section{
+			height: 140vh;
+		}
+	}
+	@media (max-height: 175px){
+		section{
+			height: 175vh;
+		}
+	}
+	@media (max-height: 150px){
+		section{
+			height: 190vh;
+		}
+	}
+	@media (max-height: 125px){
+		section{
+			height: 220vh;
+		}
+	}
+	@media (max-height: 100px){
+		section{
+			height: 270vh;
+		}
+	}
+	@media (max-height: 85px){
+		section{
+			height: 350vh;
+		}
+	}
+	@media (max-height: 75px){
+		section{
+			height: 400vh;
+		}
+	}
+	@media (max-height: 65px){
+		section{
+			height: 500vh;
+		}
+	}
+}
+
+
+
+
+/* MAX-WIDTH: 299px */
+@media (max-width: 299px){
+	.wrapper-about-1 p{
+		font-size: 5px;
+	}
+	.wrapper-about{
+		grid-column-gap: 5px;
+	}	
+}
+@media (max-width: 215px){
+	.wrapper-about-1 p{
+		font-size: 4px;
+	}
+}
+@media (max-width: 160px){
+	.wrapper-about-1 p{
+		font-size: 3px;
+	}
+}
+@media (max-width: 160px){
+	.wrapper-about-1 p{
+		font-size: 2px;
+	}
+}
+
+
+
+
+/* MEMORIES CONTAINERS */
+@media (min-width: 2001px){
+	.bg-container-memories{
+		width: 1700px;
+	}
+	.item-memories{
+		width: 485px;
+	}
+	.item-memories.selected{
+		width: 730px;
+	}
+}
+
+@media (max-width: 2000px){
+	.bg-container-memories{
+		width: 1700px;
+	}
+	.item-memories{
+		width: 485px;
+	}
+	.item-memories.selected{
+		width: 730px;
+	}
+}
+@media (max-width: 1900px){
+	.bg-container-memories{
+		width: 1600px;
+	}
+	.item-memories{
+		width: 455px;
+	}
+	.item-memories.selected{
+		width: 690px;
+	}
+}
+@media (max-width: 1800px){
+	.bg-container-memories{
+		width: 1500px;
+	}
+	.item-memories{
+		width: 425px;
+	}
+	.item-memories.selected{
+		width: 750px;
+	}
+}
+@media (max-width: 1700px){
+	.bg-container-memories{
+		width: 1400px;
+	}
+	.item-memories{
+		width: 400px;
+	}
+	.item-memories.selected{
+		width: 600px;;
+	}
+}
+@media (max-width: 1600px){
+	.bg-container-memories{
+		width: 1300px;
+	}
+	.item-memories{
+		width: 370px;
+	}
+	.item-memories.selected{
+		width: 560px;
+	}
+}
+@media (max-width: 1500px){
+	.bg-container-memories{
+		width: 1200px;
+	}
+	.item-memories{
+		width: 340px;
+	}
+	.item-memories.selected{
+		width: 620px;
+	}
+}
+@media (max-width: 1400px){
+	.bg-container-memories{
+		width: 1100px;
+	}
+	.item-memories{
+		width: 315px;
+	}
+	.item-memories.selected{
+		width: 470px;
+	}
+}
+@media (max-width: 1300px){
+	.bg-container-memories{
+		width: 1000px;
+	}
+	.item-memories{
+		width: 285px;
+	}
+	.item-memories.selected{
+		width: 430px;
+	}
+}
+@media (max-width: 1200px){
+	.bg-container-memories{
+		width: 900px;
+	}
+	.item-memories{
+		width: 255px;
+	}
+	.item-memories.selected{
+		width: 390px;
+	}
+}
+@media (max-width: 1100px){
+	.bg-container-memories{
+		width: 800px;
+	}
+	.item-memories{
+		width: 225px;
+	}
+	.item-memories.selected{
+		width: 350px;
+	}
+}
+@media (max-width: 1000px){
+
+	.slider-memories{
+		width: 94%;
+		left: 3%;
+	}
+	.bg-container-memories{
+		width: 800px;
+	}
+	.item-memories{
+		width: 225px;
+	}
+	.item-memories.selected{
+		width: 350px;
+	}
+}
+@media (max-width: 900px){
+	.bg-container-memories{
+		width: 700px;
+	}
+	.item-memories{
+		width: 200px;
+	}
+	.item-memories.selected{
+		width: 300px;
+	}
+}
+@media (max-width: 800px){
+	.bg-container-memories{
+		width: 600px;
+	}
+	.item-memories{
+		width: 170px;
+	}
+	.item-memories.selected{
+		width: 260px;
+	}
+}
+@media (max-width: 700px){
+	
+	.bg-container-memories{
+		width: 500px;
+	}
+	.item-memories{
+		width: 140px;
+	}
+	.item-memories.selected{
+		width: 220px;
+	}
+}
+@media (max-width: 600px){
+	.bg-container-memories{
+		width: 440px;
+	}
+	.item-memories{
+		width: 125px;
+	}
+	.item-memories.selected{
+		width: 190px;
+	}
+}
+@media (max-width: 500px){
+	.item-memories h3{
+		font-size: 0.7rem;
+	}
+	.item-memories.selected h3{
+		font-size: 0.7rem;
+	}
+	.bg-container-memories{
+		width: 350px;
+	}
+	.item-memories{
+		width: 100px;
+	}
+	.item-memories.selected{
+		width: 150px;
+	}
+}
+@media (max-width: 400px){
+	.bg-container-memories{
+		width: 270px;
+	}
+	.item-memories{
+		width: 77px;
+	}
+	.item-memories.selected{
+		width: 116px;
+	}
+}
+@media (max-width: 300px){
+	.bg-container-memories{
+		width: 200px;
+	}
+	.item-memories{
+		width: 57px;
+	}
+	.item-memories.selected{
+		width: 86px;
+	}
+	.item-memories h3{
+		font-size: 0.5rem;
+	}
+	.btn-mem-l, .btn-mem-r{
+		height: 10%;
+	}
+}
+@media (max-width: 250px){
+	.bg-container-memories{
+		width: 150px;
+	}
+	.item-memories{
+		width: 42px;
+	}
+	.item-memories.selected{
+		width: 66px;
+	}
+}
+@media (max-width: 200px){
+	.bg-container-memories{
+		width: 100px;
+	}
+	.item-memories{
+		width: 28px;
+	}
+	.item-memories.selected{
+		width: 44px;
+	}
+}
+@media (max-width: 150px){
+	.bg-container-memories{
+		width: 50px;
+	}
+	.item-memories{
+		width: 14px;
+	}
+	.item-memories.selected{
+		width: 22px;
+	}
+}

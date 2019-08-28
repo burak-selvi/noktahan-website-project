@@ -1,0 +1,1141 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');  
+
+* {
+  box-sizing: border-box;
+}
+section{
+	position: relative;
+	width: 100%;
+	height: 105vw;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 28%;
+  position: relative;
+  background-image: url('../imgs/headerbg.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.nokta-logo{
+  position: relative;
+  margin-left: 1rem;
+  height: 44%;
+  width: 27%;
+  background: url('../imgs/body-background.png');
+}
+#logo-n{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+}
+.header h1{
+  position: absolute;
+  color: #fff;
+  font-family: 'Lobster', cursive;
+  letter-spacing: 6px;
+  font-size: 3rem;
+  font-weight: 100;
+  align-self: center;
+  bottom: 10%;
+}
+#logo-dm{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 2rem;
+  bottom: 0;
+}
+#logo-dm:hover{
+  animation: kay 1s ease;
+}
+
+/* Hatıralar Page*/
+.mem-container{
+  
+  /* //padding: 1rem 2rem;
+  //width: 100%;  */
+  height: 55%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1rem;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+.memory{
+  width: 100%;
+  height: 100%;
+}
+.memory img{
+  width: 100%;
+  height: 80%;
+}
+.memory h2{
+  text-align: center;
+  margin-top: 1rem;
+  color: #92000a;
+  font-family: 'Lobster', cursive;
+}
+
+/* About Page*/
+.hikaye-container{
+  width: 100%;
+  height: 60%;
+  position: relative;
+  margin-top: 4rem;
+  padding: 1rem 2rem;
+}
+.hikaye-top{
+  display: flex;
+  width: 100%;
+  height: 60%;
+}
+.hikaye-top img{
+  width: 55%;
+  height: 100%;
+}
+.hikaye-header{
+  margin-top: 4rem;
+  width: 25%;
+}
+.b-line{
+  width: 70%;
+  height: 0.5rem;
+  background-color: #000;
+}
+.hikaye-container h1{
+  color: #92000a;
+  font-family: 'Lobster', cursive;
+  font-size: 5rem;
+  letter-spacing: 5px;
+  margin-left: 2rem;
+}
+
+.hikaye-text{
+  width: 55%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.473);
+  right: 2rem;
+  top: 40%;
+  padding: 1.5rem;
+}
+.hikaye-text p{
+  font-size: 1rem;
+  letter-spacing: 3px;
+  font-family: 'Lobster', cursive;
+  font-weight: 300;
+}
+
+/* Lezzetler Page*/
+.lezzet-container{
+  margin-top: 3rem;
+  width: 100%;
+  height: 50%;
+  padding: 1rem 0 1rem 2rem;
+  display: flex;
+}
+.lezzet-contents{
+  width: 25%;
+  height: 100%;
+}
+.lezzet-contents ul{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  list-style: none;
+}
+.lezzet-contents ul li{
+  font-family: 'Lobster', cursive;
+  color: #000;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+.lezzet-contents ul li:hover{
+  color: #92000a;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+.lezzet-contents ul li.select{
+  color: #92000a;
+  margin-left: 2rem;
+}
+.lezzet-content-wrapper{
+  position: relative;
+  width: 75%;
+  height: 100%;
+}
+.lezzet-content{
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #92000a;
+  border-left: 1px solid #92000a;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1rem;
+  padding: 3rem;
+  transition: opacity .6s ease;
+}
+.lezzet-content.choosen{
+  opacity: 1;
+}
+.lezzet{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lezzet div{
+  width: 50%;
+  height: 60%;
+}
+.lezzet img{
+  width: 100%;
+  height: 100%;
+}
+.lezzet-h{
+  position: absolute;
+  margin-left: 1rem;
+  margin-top: -1rem;
+  background-color: #fff;
+  padding: 0 1rem;
+  color: #92000ac9;
+  font-weight: 100;
+}
+.lezzet .item{
+  font-family: 'Lobster', cursive;
+  color: #92000a;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.lezzet .price{
+  font-size: 1.4rem;
+  font-family: 'Lobster', cursive;
+  margin-top: 1rem;
+}
+
+.contact-container{
+  margin-top: 4rem;
+  width: 100%;
+  height: 60%;
+}
+.iletisim-wrapper{
+  padding: 0 3rem;
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+.iletisim-links{
+  width: 50%;
+  height: 100%;
+  padding-right: 3rem;
+}
+.iletisim-links ul{
+  list-style: none;
+}
+.iletisim-links ul li{
+  line-height: 2.2;
+}
+.iletisim-links ul li a{
+  color: #000;
+  text-decoration: none;
+  font-family: 'Lobster', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.iletisim-links ul li a:hover{
+  color: #92000a;
+}
+.iletisim-links ul #address{
+  line-height: 1.3;
+}
+.iletisim-links ul #address i{
+  float: left;
+}
+.iletisim-links ul li a i{
+  padding-right: 1.5rem;
+  font-size: 2rem;
+}
+.iletisim-form{
+  width: 50%;
+  height: 100%;
+}
+.iletisim-form form{
+  display: grid;
+  grid-template-areas: 'isim email' 'konu tel' 'mesaj mesaj' 'mesaj mesaj' 'mesaj mesaj';
+  height: 90%;
+  grid-gap: 1rem;
+}
+.iletisim-form form div{
+  width: 100%;
+  height: 100%;
+}
+
+.iletisim-form form .isim input,
+.iletisim-form form .email input,
+.iletisim-form form .konu input,
+.iletisim-form form .tel input,
+.iletisim-form form .mesaj textarea{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-family: 'Lobster', cursive;
+  font-size: 1.1rem;
+  padding-left: 1.5rem;
+  outline: none;
+  background: transparent;
+}
+.iletisim-form form .mesaj textarea{
+  padding-top: 0.5rem;
+}
+
+.iletisim-form form .isim{
+  grid-area: isim;
+}
+.iletisim-form form .email{
+  grid-area: email;
+}
+.iletisim-form form .konu{
+  grid-area: konu;
+}
+.iletisim-form form .tel{
+  grid-area: tel;
+}
+.iletisim-form form .mesaj{
+  grid-area: mesaj;
+  width: 100%;
+  height: 100%;
+}
+.iletisim-form form input[type="submit"]{
+  width: 50%;
+  background-color: #92000a;
+  color: #fff;
+  font-family: 'Lobster', cursive;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.iletisim-map{
+  width: 100%;
+  height: 50%;
+}
+.iletisim-form form input[type="submit"]:hover{
+  background-color: #c7020f;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+
+/* 
+################################################################################
+#####                      Min-width: 1600px                      ##############
+################################################################################
+*/
+
+@media (min-width: 1600px){
+  #menu{
+    width: 60px;
+  }
+  #menu div{
+    width: 15px;
+    height: 15px;
+  }
+  .header h1{
+      font-size: 5.5rem;
+  }
+  .hikaye-text p{
+    font-size: 1.6rem;
+  }
+  .memory h2{
+    font-size: 2.5rem;
+  }
+  .iletisim-links ul li {
+    line-height: 3;
+  }
+  .iletisim-links ul #address{
+    line-height: 2;
+  }
+  .iletisim-links ul li a{
+    font-size: 1.6rem;
+  }
+  .iletisim-links ul li a i{
+    font-size: 2.2rem;
+  }
+  .lezzet-contents ul li{
+    line-height: 2;
+    font-size: 2.2rem;
+  }
+  .lezzet-h{
+    font-size: 2rem;
+    margin-left: 1.5rem;
+  }
+  .lezzet .item{
+    font-size: 2rem;
+  }
+  .lezzet .price{
+    font-size: 2.2rem;
+  }
+}
+
+
+/* 
+################################################################################
+#####                      Min-width: 1400px                      ##############
+################################################################################
+*/
+@media (min-width: 1400px) and (max-width: 1599px){
+  #menu{
+    width: 55px;
+  }
+  #menu div{
+    width: 13px;
+    height: 13px;
+  }
+  .header h1{
+      font-size: 5rem;
+  }
+  .hikaye-text p{
+    font-size: 1.5rem;
+  }
+  .memory h2{
+    font-size: 2.1rem;
+  }
+  .iletisim-links ul li {
+    line-height: 2.5;
+  }
+  .iletisim-links ul #address{
+    line-height: 2;
+  }
+  .iletisim-links ul li a{
+    font-size: 1.3rem;
+  }
+  .iletisim-links ul li a i{
+    font-size: 1.9rem;
+  }
+  .lezzet-contents ul li{
+    line-height: 2;
+    font-size: 2rem;
+  }
+  .lezzet-h{
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  .lezzet .item{
+    font-size: 1.6rem;
+  }
+  .lezzet .price{
+    font-size: 1.9rem;
+  }
+}
+
+
+
+/* 
+################################################################################
+#####                      Min-width: 1200px                      ##############
+################################################################################
+*/
+@media (min-width: 1200px) and (max-width: 1399px){
+  section{
+    height: 120vw;
+  }
+  .lezzet-contents ul li{
+    line-height: 1.8;
+    font-size: 1.7rem;
+  }
+  .lezzet-h{
+    font-size: 1.5rem;
+    margin-top: -1rem;
+    margin-left: 1.5rem;
+  }
+  .lezzet .item{
+    font-size: 1.4rem;
+  }
+  .lezzet .price{
+    font-size: 1.7rem;
+  }
+  @media(min-height: 1000px){
+    .hikaye-text p{
+      font-size: 1.6rem;
+    }
+  }
+}
+
+
+
+/* 
+################################################################################
+#####                      Min-width: 1000px                      ##############
+################################################################################
+*/
+@media (min-width: 1000px) and (max-width: 1199px){
+  section{
+    height: 125vw;
+  }
+  .header h1{
+    font-size: 3.5rem;
+  }
+  .hikaye-container h1{
+    font-size: 4.5rem;
+  }
+  .hikaye-text p{
+    font-size: 1.1rem;
+  }
+  .b-line{
+    width: 80%;
+  }
+  .lezzet-contents ul li{
+    line-height: 2;
+    font-size: 1.6rem;
+  }
+  @media (max-height: 800px){
+    .lezzet-contents ul{
+      margin-left: 0;
+    }
+  }
+  @media (min-height: 1300px){
+    .lezzet-contents ul{
+      margin-left: 0;
+    }
+  }
+}
+
+
+
+/* 
+################################################################################
+#####                      Min-width: 800px                      ##############
+################################################################################
+*/
+@media (min-width: 800px) and (max-width: 999px){
+  section{
+    height: 130vw;
+  }
+  .iletisim-form form .isim input,
+  .iletisim-form form .email input,
+  .iletisim-form form .konu input,
+  .iletisim-form form .tel input,
+  .iletisim-form form .mesaj textarea,
+  .iletisim-form form input[type="submit"]{
+    font-size: 1rem;
+  }
+  .hikaye-container h1{
+    font-size: 3.8rem;
+    letter-spacing: 4px;
+  }
+  .hikaye-text p{
+    font-size: 0.8rem;
+  }
+  .b-line{
+    width: 85%;
+  }
+  .memory h2{
+    font-size: 1.2rem;
+  }
+  .lezzet-contents{
+    width: 30%;
+  }
+  .lezzet-content-wrapper{
+    width: 70%;
+  }
+  .lezzet-contents ul li{
+    line-height: 1.8;
+    font-size: 1.4rem;
+  }
+  .lezzet .item{
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  .lezzet .price{
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-height: 500px){
+    #logo-dm{
+      width: 60px;
+      height: 60px;
+    }
+    .lezzet-contents ul{
+      margin-left: 0;
+    }
+  }
+}
+
+
+
+/* 
+################################################################################
+#####                      Min-width: 600px                      ##############
+################################################################################
+*/
+@media (min-width: 600px) and (max-width: 799px){
+  section{
+    height: 140vw;
+  }
+  .hikaye-container h1{
+    font-size: 2.9rem;
+    margin-left: 1rem;
+    letter-spacing: 3px;
+  }
+  .hikaye-text{
+    padding: 1rem;
+  }
+  .hikaye-text p{
+    font-size: 0.6rem;
+  }
+  .b-line{
+    width: 90%;
+  }
+  .memory h2{
+    font-size: 1rem;
+  }
+  .lezzet div{
+    height: 45%;
+  } 
+  .lezzet-container{
+    height: 55%;
+  }
+  .lezzet-contents{
+    width: 30%;
+  }
+  .lezzet-content-wrapper{
+    width: 75%;
+  }
+  .lezzet-content{
+    padding: 1.5rem;
+  }
+  .lezzet-h{
+    font-size: 1.3rem;
+  }
+  .lezzet-contents ul li{
+    font-size: 1.1rem;
+  }
+  .lezzet .item{
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .lezzet .price{
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  .iletisim-form form .isim input,
+  .iletisim-form form .email input,
+  .iletisim-form form .konu input,
+  .iletisim-form form .tel input,
+  .iletisim-form form .mesaj textarea,
+  .iletisim-form form input[type="submit"]{
+    font-size: 0.8rem;
+  }
+  .iletisim-links{
+    padding-right: 1rem;
+  }
+  .contact-container{
+    height: 55%;
+  }
+  .iletisim-links ul li{
+    line-height: 2;
+  }
+  .iletisim-links ul li a i{
+    padding-right: 0;
+  }
+  .iletisim-links ul #address{
+    line-height: 0.8;
+  }
+  .iletisim-links ul li a{
+    font-size: 0.8rem;
+  }
+  .iletisim-links ul li a i{
+    font-size: 1.2rem;
+  }
+  #logo-dm{
+    width: 70px;
+    height: 70px;
+  }
+  @media (min-height: 900px){
+    .hikaye-text p{
+      font-size: 0.8rem;
+    }
+    .lezzet-contents ul li{
+      font-size: 1.3rem;
+      line-height: 1.7;
+    }
+    .lezzet-contents ul li:hover{
+      margin-left: 1.4rem;
+    }
+    .lezzet-contents ul li.select{
+      margin-left: 1.4rem;
+    }
+  }
+  @media (max-height: 450px){
+    .lezzet-contents ul{
+      margin-left: 0;
+    }
+    .lezzet-contents ul li{
+      line-height: 1.7;
+    }
+    .lezzet-contents ul li:hover{
+      margin-left: 1.4rem;
+    }
+    .lezzet-contents ul li.select{
+      margin-left: 1.4rem;
+    }
+  }
+}
+
+
+
+/* 
+################################################################################
+#####                      Min-width: 400px                      ##############
+################################################################################
+*/
+@media (min-width: 400px) and (max-width: 599px){
+  .contact-container{
+    margin-top: 1rem;
+  }
+  section{
+    height: 150vw;
+  }
+  .header h1{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .hikaye-container h1{
+    font-size: 2rem;
+    margin-left: 1rem;
+    letter-spacing: 3px;
+  }
+  .hikaye-text{
+    padding: 1rem;
+  }
+  .hikaye-text p{
+    font-size: 0.4rem;
+  }
+  .b-line{
+    width: 95%;
+  }
+  .memory h2{
+    font-size: 0.8rem;
+  }
+  .lezzet div{
+    height: 45%;
+  }
+  .lezzet-container{
+    padding: 1rem 0 1rem 1rem;
+    height: 55%;
+  }
+  .lezzet-contents{
+    width: 35%;
+  }
+  .lezzet-content-wrapper{
+    width: 65%;
+  }
+  .lezzet-content{
+    padding: 0.7rem;
+    grid-gap: 0.3rem;
+  }
+  .lezzet-h{
+    margin-top: -.5rem;
+    font-size: 1rem;
+  }
+  .lezzet-contents ul li{
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+  .lezzet-contents ul li:hover{
+    margin-left: 1.3rem;
+  }
+  .lezzet-contents ul li.select{
+    margin-left: 1.3rem;
+  }
+  .lezzet .item{
+    margin-top: 0.5rem;
+    font-size: 0.6rem;
+  }
+  .lezzet .price{
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .iletisim-wrapper{
+    padding: 0 1.5rem;
+  }
+  .iletisim-form form .isim input,
+  .iletisim-form form .email input,
+  .iletisim-form form .konu input,
+  .iletisim-form form .tel input,
+  .iletisim-form form .mesaj textarea{
+    font-size: 0.4rem;
+    padding-left: 0.6rem;
+  }
+  .iletisim-form form input[type="submit"]{
+    font-size: 0.5rem;
+  }
+  .contact-container{
+    height: 55%;
+  }
+  .iletisim-links{
+    padding-right: 1rem;
+  }
+  .iletisim-links ul li{
+    line-height: 1.1;
+  }
+  .iletisim-links ul #address{
+    line-height: 0.9;
+  }
+  .iletisim-links ul li a{
+    font-size: 0.6rem;
+  }
+  .iletisim-links ul li a i{
+    font-size: 0.8rem;
+    padding-right: 0;
+  }
+  #logo-dm{
+    width: 70px;
+    height: 70px;
+  } 
+  @media (min-height: 700px){
+    section{
+      height: 100vh;
+    }
+    .hikaye-container{
+      margin-top: 2rem;
+    }
+    .mem-container{
+      margin-top: 2rem;
+      grid-template-columns: auto auto;
+      height: 50%;
+    }
+    .memory h2{
+      margin-top: 0;
+      font-size: 0.6rem;
+    }
+    .lezzet-content{
+      grid-template-columns: auto auto;
+    }
+    .lezzet div{
+      height: 55%;
+      width: 35%;
+    }
+    .lezzet .item{
+      font-size: 0.6rem;
+    }
+    .lezzet .price{
+      margin-top: 0.2rem;
+      font-size: 0.7rem;
+    }
+    .lezzet-contents ul li{
+      line-height: 1.8;
+      font-size: 0.9rem;
+    }
+    .lezzet-contents ul{
+      margin-left: 0;
+    }
+
+  }
+  @media (min-height: 800px){
+    .mem-container{
+      height: 60%;
+    }
+  }
+}
+
+
+
+
+/* 
+################################################################################
+#####                      Max-width: 399px                       ##############
+################################################################################
+*/
+@media (max-width: 399px){
+  .hikaye-container h1{
+    font-size: 2rem;
+    margin-left: 1rem;
+    letter-spacing: 2px;
+  }
+  .hikaye-text{
+    padding: 0.5rem;
+  }
+  .hikaye-text p{
+    font-size: 0.4rem;
+    letter-spacing: 1px;
+  }
+  .b-line{
+    width: 95%;
+  }
+  .contact-container{
+    margin-top: 0;
+  }
+  
+  .memory h2{
+    font-size: 0.8rem;
+  }
+  .lezzet div{
+    height: 45%;
+  }
+  .lezzet-container{
+    padding: 1rem 0 1rem 1rem;
+    height: 55%;
+  }
+  .lezzet-contents{
+    width: 35%;
+  }
+  .lezzet-content-wrapper{
+    width: 65%;
+  }
+  .lezzet-content{
+    padding: 0.7rem;
+    grid-gap: 0.3rem;
+  }
+  .lezzet-h{
+    margin-top: -.5rem;
+    font-size: 0.7rem;
+  }
+  .lezzet-contents ul{
+    margin: 0.4rem 0 0 0;
+  }
+  .lezzet-contents ul li{
+    font-size: 0.7rem;
+    letter-spacing: 0;
+  }
+  .lezzet-contents ul li:hover{
+    margin-left: 1.3rem;
+  }
+  .lezzet-contents ul li.select{
+    margin-left: 1.3rem;
+  }
+  .lezzet .item{
+    margin-top: 0.5rem;
+    font-size: 0.4rem;
+  }
+  .lezzet .price{
+    margin-top: 0.5rem;
+    font-size: 0.6rem;
+  }
+  .iletisim-form form .isim input,
+  .iletisim-form form .email input,
+  .iletisim-form form .konu input,
+  .iletisim-form form .tel input,
+  .iletisim-form form .mesaj textarea{
+    font-size: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .iletisim-form form input[type="submit"]{
+    font-size: 0.2rem;
+  }
+  .iletisim-links{
+    padding-right: 0.5rem;
+  }
+  .iletisim-wrapper{
+    padding: 0 1rem;
+  }
+  .header h1{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .iletisim-links ul li a{
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+  }
+  .iletisim-links ul li a i{
+    font-size: 0.8rem;
+    padding-right: 0.4rem;
+  }
+  .iletisim-links ul li{
+    line-height: 1;
+  }
+  .iletisim-links ul #address{
+    line-height: 0.5;
+  }
+  #logo-dm{
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (min-height: 900px){
+    section{
+      height: 90vh;
+    }   
+  }
+  @media (max-height: 899px){
+    section{
+      height: 100vh;
+    }
+  }
+  @media (max-height: 750px){
+    #hikaye{
+      height: 105vh;
+    }
+    #memories-outerpage{
+      height: 110vh;
+    }
+  }
+  @media (max-height: 650px){
+    #hikaye{
+      height: 115vh;
+    }
+    #memories-outerpage{
+      height: 140vh;
+    }
+  }
+  @media (max-height: 550px){
+    #hikaye{
+      height: 125vh;
+    }
+    #memories-outerpage{
+      height: 160vh;
+    }
+  }
+  @media (max-height: 450px){
+    section{
+      height: 145vh;
+    }
+    #hikaye{
+      height: 175vh;
+    }
+    #memories-outerpage{
+      height: 200vh;
+    }
+  }
+  @media (max-height: 350px){
+    section{
+      height: 200vh;
+    }
+    #hikaye{
+      height: 205vh;
+    }
+    #memories-outerpage{
+      height: 250vh;
+    }
+  }
+  @media (max-height: 300px){
+    #hikaye{
+      height: 235vh;
+    }
+    #memories-outerpage{
+      height: 300vh;
+    }
+  }
+  @media (max-height: 250px){
+    section{
+      height: 250vh;
+    }
+    #hikaye{
+      height: 300vh;
+    }
+    #memories-outerpage{
+      height: 400vh;
+    }
+  }
+  @media (max-height: 200px){
+    section{
+      height: 300vh;
+    }
+    #hikaye{
+      height: 400vh;
+    }
+    #memories-outerpage{
+      height: 500vh;
+    }
+  }
+  @media (max-height: 150px){
+    section{
+      height: 500vh;
+    }
+    #hikaye{
+      height: 600vh;
+    }
+    #memories-outerpage{
+      height: 700vh;
+    }
+  }
+  @media (max-height: 100px){
+    #hikaye{
+      height: 900vh;
+    }
+    #memories-outerpage{
+      height: 1000vh;
+    }
+  }
+}
+
+
+@media (max-width:350px){
+  .lezzet-contents ul li:hover{
+    margin-left: 0.8rem;
+  }
+  .lezzet-contents ul li.select{
+    margin-left: 0.8rem;
+  }
+  .memory h2{
+    font-size: 0.6rem;
+  }
+  .header h1{
+    font-size: 1rem;
+  }
+  .iletisim-links ul li a{
+    font-size: 0.4rem;
+  }
+  .iletisim-links ul li a i{
+    font-size: 0.6rem;
+  }
+  .hikaye-container h1{
+    font-size: 1.5rem;
+  }
+}
+@media (max-width:300px){
+  .memory h2{
+    font-size: 0.4rem;
+  }
+  footer{
+    left: 0;
+    bottom: 0;
+  }
+  #logo-dm{
+    width: 30px;
+    height: 30px;
+    right: 0;
+  }
+  .iletisim-links ul li a{
+    font-size: 0.2rem;
+  }
+  .iletisim-links ul li a i{
+    font-size: 0.5rem;
+  }
+  .lezzet-contents ul li{
+    font-size: 0.5rem;
+  }
+}
+@media (max-width: 250px){
+  .iletisim-wrapper{
+    display: none;
+  }
+  .hikaye-text p{
+    font-size: 0.1rem;
+    font-weight: 100;
+    letter-spacing: 0;
+  }
+  .hikaye-container h1{
+    font-size: 1rem;
+    letter-spacing: 0;
+    margin-left: 2px;
+  }
+}
