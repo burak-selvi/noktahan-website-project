@@ -1,0 +1,11 @@
+{
+  "name": "noktahan",
+  "version": "1.0.0",
+  "description": "nokta han restaurant  website project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Burak Selvi",
+  "license": "ISC"
+}
